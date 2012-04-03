@@ -1,0 +1,7 @@
+parameters:
+#    titome_peintre_philippe_leroux.example.class: Titome\PeintrePhilippeLerouxBundle\Example
+
+services:
+#    titome_peintre_philippe_leroux.example:
+#        class: %titome_peintre_philippe_leroux.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
