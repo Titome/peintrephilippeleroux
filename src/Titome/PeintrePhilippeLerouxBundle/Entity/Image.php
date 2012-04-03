@@ -3,6 +3,7 @@
 namespace Titome\PeintrePhilippeLerouxBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Titome\PeintrePhilippeLerouxBundle\Entity\Image
@@ -41,7 +42,17 @@ class Image
      * @ORM\Column(name="creat", type="datetime")
      */
     private $creat;
+    
+    /**
+     * @Assert\Image 
+     */
+    public $file;
 
+
+    public function __construct()
+    {
+        $this->setCreat(new \DateTime);
+    }
 
     /**
      * Get id
