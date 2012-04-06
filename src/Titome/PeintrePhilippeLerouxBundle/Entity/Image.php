@@ -30,11 +30,11 @@ class Image
     private $nom;
 
     /**
-     * @var string $path
+     * @var string $legende
      *
-     * @ORM\Column(name="path", type="string", length=255)
+     * @ORM\Column(name="legende", type="string", length=255)
      */
-    private $path;
+    private $legende;
 
     /**
      * @var datetime $creat
