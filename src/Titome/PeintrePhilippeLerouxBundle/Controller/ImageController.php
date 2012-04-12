@@ -18,8 +18,8 @@ class ImageController extends Controller
         $formHandler = new ImageHandler($form, $this->getRequest(), $this->getDoctrine()->getEntityManager());
         
         if ($formHandler->process())
-            return $this->redirect($this->generateUrl($route));
+            return $this->redirect($this->generateUrl('Test', array('name' => 'test')));
         
-        return $this->;
+        return $this->render('TitomePeintrePhilippeLerouxBundle:Image:ajout.html.twig', array('form' => $form->createView()));
     }
 }

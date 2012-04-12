@@ -85,23 +85,23 @@ class Image
     }
 
     /**
-     * Set path
+     * Set legende
      *
-     * @param string $path
+     * @param string $legende
      */
-    public function setPath($path)
+    public function setlegende($legende)
     {
-        $this->path = $path;
+        $this->legende = $legende;
     }
 
     /**
-     * Get path
+     * Get legende
      *
      * @return string 
      */
-    public function getPath()
+    public function getLegende()
     {
-        return $this->path;
+        return $this->legende;
     }
 
     /**

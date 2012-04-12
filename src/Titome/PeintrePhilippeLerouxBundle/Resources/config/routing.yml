@@ -1,3 +1,7 @@
 Admin:
   resource: "@TitomePeintrePhilippeLerouxBundle/Resources/config/routing_admin.yml"
   prefix:   /admin
+  
+Test:
+  pattern:  /test/{name}
+  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Default:index, format: test }

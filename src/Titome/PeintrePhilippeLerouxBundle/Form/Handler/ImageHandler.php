@@ -42,10 +42,10 @@ class ImageHandler
     
     public function onSuccess(Image $image)
     {
-        $path = uniqid().'-'.$image->file->getClientOriginalName();
+        $nom = uniqid().'-'.$image->file->getClientOriginalName();
         
-        $image->setPath($path);
-        $image->file->move(__DIR__.'/../../../../../web/image', $path);
+        $image->setNom($nom);
+        $image->file->move(__DIR__.'/../../../../../web/image', $nom);
         
         $this->em->persist($image);
         $this->em->flush();
