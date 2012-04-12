@@ -9,8 +9,8 @@ class ImageType extends AbstractType
 {
     public function buildForm(FormBuilder $builder, array $options)
     {
-        $builder->add('legende')
-                ->add('file');
+        $builder->add('legende', 'text', array('label' => 'Légende'))
+                ->add('file', 'file', array('label' => 'Image'));
     }
     
     public function getName()
