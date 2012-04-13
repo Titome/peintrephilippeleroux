@@ -18,8 +18,17 @@ class ImageController extends Controller
         $formHandler = new ImageHandler($form, $this->getRequest(), $this->getDoctrine()->getEntityManager());
         
         if ($formHandler->process())
-            return $this->redirect($this->generateUrl('Test', array('name' => 'test')));
+            return $this->redirect($this->generateUrl('Galerie'));
         
         return $this->render('TitomePeintrePhilippeLerouxBundle:Image:ajout.html.twig', array('form' => $form->createView()));
+    }
+    
+    public function galerieAction()
+    {
+        $repository = $this->getDoctrine()->getEntityManager()->getRepository('TitomePeintrePhilippeLerouxBundle:Image');
+        
+        $images = $repository->findAll();
+        
+        return $this->render('TitomePeintrePhilippeLerouxBundle:Image:galerie.html.twig', array('images' => $images));
     }
 }

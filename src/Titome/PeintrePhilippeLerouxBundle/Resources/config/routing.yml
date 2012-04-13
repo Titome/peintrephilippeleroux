@@ -5,3 +5,7 @@ Admin:
 Test:
   pattern:  /test/{name}
   defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Default:index, format: test }
+  
+Galerie:
+  pattern:  /galerie
+  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Image:galerie }
