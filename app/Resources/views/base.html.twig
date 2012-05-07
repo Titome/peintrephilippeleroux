@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}Peintre Philippe Leroux{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+        {% endblock %}
+        {# TODO: Mettre le favicon dans le dossier Resources du bundle #}
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>

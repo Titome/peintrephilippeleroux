@@ -1,10 +1,46 @@
 {% extends '::base.html.twig' %}
 
-{% block nav %}
+{% block stylesheets %}
+    {{ parent() }}
+
+    {% stylesheets 
+        '@TitomePeintrePhilippeLerouxBundle/Resources/public/css/bootstrap-responsive.min.css'
+        '@TitomePeintrePhilippeLerouxBundle/Resources/public/css/bootstrap.min.css'
+        debug=false output='css/style.css'
+    %}
+        <link href="{{ asset_url }}" rel="stylesheet" />
+    {% endstylesheets %}
+{% endblock %}
+
+{#{% block nav %}
     <nav>
         <h1>Panel d'administration</h1>
         <ul>
             <li><a href="{{ path('AjoutImage') }}">Ajouter une image dans la galerie</a></li>
         </ul>
     </nav>
+{% endblock %}#}
+
+{% block nav %}
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="container">
+                {# TODO: Faire une page d'accueil pour le panel d'administration #}
+                <a class="brand" href="#">Panel d'administration</a>
+                <ul class="nav">
+                    <li class="dropdown">
+                        {# TODO: Faire une page pour la gestion des images #}
+                        <a href="#" class="dropdown-toggle" data-toogle="dropdown">
+                            Image <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="{{ path('AjoutImage') }}">Ajouter</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 {% endblock %}
