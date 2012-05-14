@@ -17,6 +17,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
+            new Avalanche\Bundle\ImagineBundle\AvalancheImagineBundle(),
             new Titome\PeintrePhilippeLerouxBundle\TitomePeintrePhilippeLerouxBundle(),
         );
 

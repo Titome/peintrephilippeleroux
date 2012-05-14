@@ -14,7 +14,7 @@
             {% endif %}
                     <td>
                         <p>{{ image.legende }}</p>
-                        <img src="{{ asset(['image/', image.nom]|join) }}" alt="{{ image.legende }}" />
+                        <img src="{{ asset(('image/'~image.nom) | apply_filter('my_thumb')) }}" alt="{{ image.legende }}" />
                     </td>
             {% set i = i + 1 %}    
             {% if i == 2 or i == 0%}
