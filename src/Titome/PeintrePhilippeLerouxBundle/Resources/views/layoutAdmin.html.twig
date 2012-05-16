@@ -2,8 +2,7 @@
 
 {% block stylesheets %}
     {{ parent() }}
-    
-    {# TODO: Enlever les 'debug=false' pour le css et le js #}
+
     {% stylesheets 
         '@TitomePeintrePhilippeLerouxBundle/Resources/public/css/bootstrap-responsive.min.css'
         '@TitomePeintrePhilippeLerouxBundle/Resources/public/css/bootstrap.min.css'
@@ -12,15 +11,6 @@
         <link href="{{ asset_url }}" rel="stylesheet" />
     {% endstylesheets %}
 {% endblock %}
-
-{#{% block nav %}
-    <nav>
-        <h1>Panel d'administration</h1>
-        <ul>
-            <li><a href="{{ path('AjoutImage') }}">Ajouter une image dans la galerie</a></li>
-        </ul>
-    </nav>
-{% endblock %}#}
 
 {% block nav %}
     <div class="navbar">
@@ -52,7 +42,7 @@
     {% javascripts        
         '@TitomePeintrePhilippeLerouxBundle/Resources/public/js/jquery-1.7.2.min.js'
         '@TitomePeintrePhilippeLerouxBundle/Resources/public/js/bootstrap.min.js'
-        debug=false output='main.js'
+        output='main.js'
     %}
         <script src="{{ asset_url }}"></script>
     {% endjavascripts %}

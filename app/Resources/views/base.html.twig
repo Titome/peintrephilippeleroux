@@ -9,8 +9,10 @@
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block nav %}{% endblock %}
-        {% block body %}{% endblock %}
+        {% block body %}
+            {% block nav %}{% endblock %}
+            {% block corps %}{% endblock %}
+        {% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>

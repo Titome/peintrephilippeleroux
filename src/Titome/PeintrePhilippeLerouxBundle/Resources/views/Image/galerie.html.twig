@@ -1,11 +1,12 @@
-{% extends "TitomePeintrePhilippeLerouxBundle::layoutAdmin.html.twig" %}
+{% extends "TitomePeintrePhilippeLerouxBundle::layout.html.twig" %}
 
 {% block title %}Galerie - {{ parent() }}{% endblock %}
 
 {% block body %}
+    {{ parent() }}
     <h1>Galerie</h1>
     
-    <table>
+    <table class="table table-striped">
         {% set i = 0 %}
             
         {% for image in images %}
@@ -13,8 +14,8 @@
                 <tr>
             {% endif %}
                     <td>
-                        <p>{{ image.legende }}</p>
                         <img src="{{ asset(('image/'~image.nom) | apply_filter('my_thumb')) }}" alt="{{ image.legende }}" />
+                        <p>{{ image.legende }}</p>
                     </td>
             {% set i = i + 1 %}    
             {% if i == 2 or i == 0%}

@@ -1,15 +1,36 @@
 {% extends '::base.html.twig' %}
 
-{% block nav %}
-    <nav>
-        <h1>PHILIPPE LEROUX</h1>
-        <ul>
-            <li><a href="#">Exposition</a></li>
-            <li><a href="#">Actualité</a></li>
-            <li><a href="#">Galerie</a></li>
-            <li><a href="#">Livres</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Biographie</a></li>
-        </ul>
-    </nav>
+{% block stylesheets %}
+    {{ parent() }}
+    
+    {% stylesheets 
+        '@TitomePeintrePhilippeLerouxBundle/Resources/public/css/bootstrap-responsive.min.css'
+        '@TitomePeintrePhilippeLerouxBundle/Resources/public/css/bootstrap.min.css'
+        output='css/style.css'
+    %}
+        <link href="{{ asset_url }}" rel="stylesheet" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+    <div class="row-fluid">
+        <div class="span3"></div>
+        <div class="span3">
+            {% block nav %}
+                <nav>
+                    <h1>PHILIPPE LEROUX</h1>
+                    <ul>
+                        <li><a href="#">Exposition</a></li>
+                        <li><a href="#">Actualité</a></li>
+                        <li><a href="#">Galerie</a></li>
+                        <li><a href="#">Livres</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Biographie</a></li>
+                    </ul>
+                </nav>
+            {% endblock %}
+        </div>
+        <div class="span3"></div>
+        <div class="span3"></div>
+    </div>
 {% endblock %}
