@@ -4,9 +4,9 @@
     {{ parent() }}
     
     {% stylesheets 
-        '@TitomePeintrePhilippeLerouxBundle/Resources/public/css/bootstrap-responsive.min.css'
-        '@TitomePeintrePhilippeLerouxBundle/Resources/public/css/bootstrap.min.css'
         '@TitomePeintrePhilippeLerouxBundle/Resources/public/css/peintrephilippeleroux.css'
+        '@TitomePeintrePhilippeLerouxBundle/Resources/public/css/bootstrap-responsive.min.css'
+        '@TitomePeintrePhilippeLerouxBundle/Resources/public/css/bootstrap.min.css'        
         output='css/style.css'
     %}
         <link href="{{ asset_url }}" rel="stylesheet" />
@@ -14,7 +14,7 @@
 {% endblock %}
 
 {% block nav %}
-    <div class="navbar red">
+    <div class="red navbar">
         <div class="navbar-inner">
             <div class="container">
                 {# TODO: Faire une page d'accueil du site #}
