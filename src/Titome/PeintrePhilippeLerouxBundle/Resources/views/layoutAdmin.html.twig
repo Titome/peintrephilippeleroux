@@ -35,15 +35,3 @@
         </div>
     </div>
 {% endblock %}
-        
-{% block javascripts %}
-    {{ parent() }}
-
-    {% javascripts        
-        '@TitomePeintrePhilippeLerouxBundle/Resources/public/js/jquery-1.7.2.min.js'
-        '@TitomePeintrePhilippeLerouxBundle/Resources/public/js/bootstrap.min.js'
-        output='main.js'
-    %}
-        <script src="{{ asset_url }}"></script>
-    {% endjavascripts %}
-{% endblock %}

@@ -6,7 +6,7 @@
     {{ parent() }}
     <h1>Galerie</h1>
     
-    <table class="table table-striped">
+    {#<table class="table table-striped">
         {% set i = 0 %}
             
         {% for image in images %}
@@ -25,5 +25,18 @@
         {% else %}
             <p>Pas encore d'image !</p>
         {% endfor %}
-    </table>
+    </table>#}
+    
+    <ul class="thumbnails">
+        {% for image in images %}
+            <li>
+                <div class="thumbnail">
+                    <img src="{{ asset(('image/'~image.nom) | apply_filter('my_thumb')) }}" alt="{{ image.legende }}" />
+                    <h5>{{ image.legende }}</h5>
+                </div>
+            </li>
+        {% else %}
+            <h5>Pas encore d'image !</h5>
+        {% endfor %}
+    </ul>
 {% endblock %}
