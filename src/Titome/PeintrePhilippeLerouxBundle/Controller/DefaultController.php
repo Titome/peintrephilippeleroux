@@ -8,8 +8,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class DefaultController extends Controller
 {
     
-    public function indexAction($name)
+    public function indexAction()
     {
-        return $this->render('TitomePeintrePhilippeLerouxBundle:Default:index.html.twig', array('name' => $name));
+        $repository = $this->getDoctrine()->getEntityManager()->getRepository('TitomePeintrePhilippeLerouxBundle:Image');
+        
+        $images = $repository->findAll();
+        
+        return $this->render('TitomePeintrePhilippeLerouxBundle:Default:index.html.twig', array('images' => $images));
     }
 }

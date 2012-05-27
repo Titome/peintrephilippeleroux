@@ -1,1 +1,30 @@
-Hello {{ name }}!
+{% extends "TitomePeintrePhilippeLerouxBundle::layout.html.twig" %}
+
+{% block title %}Accueil - {{ parent() }}{% endblock %}
+
+{% block corps %}
+    {{ parent() }}
+    
+<div class="span9 columns">
+    <div id="myCarousel" class="carousel slide">
+        <div class="carousel-inner">
+            {% set i = 0 %}
+                
+            {% for image in images %}
+                {% if i == 0 %}
+                    <div class="item active">
+                        <img src="{{ asset(('image/'~image.nom) | apply_filter('img')) }}" alt="" />
+                    </div>
+                {% else %}
+                    <div class="item">
+                        <img src="{{ asset(('image/'~image.nom) | apply_filter('img')) }}" alt="" />
+                    </div>
+                {% endif %}    
+                {% set i = i + 1 %} 
+            {% endfor %}
+        </div>
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div>
+</div>
+{% endblock %}
