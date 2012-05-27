@@ -64,3 +64,6 @@ avalanche_imagine:
         my_thumb:
             type:    thumbnail
             options: { size: [400, 400], mode: inset }
+        img:
+          type:    thumbnail
+          options: { size: [800, 800], mode: inset }

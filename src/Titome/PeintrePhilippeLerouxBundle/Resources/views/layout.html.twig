@@ -5,10 +5,11 @@
     
     {% stylesheets 
         '@TitomePeintrePhilippeLerouxBundle/Resources/public/css/peintrephilippeleroux.css'
+        '@TitomePeintrePhilippeLerouxBundle/Resources/public/css/peintrephilippeleroux-responsive.css'
         '@TitomePeintrePhilippeLerouxBundle/Resources/public/css/bootstrap-responsive.min.css'
         '@TitomePeintrePhilippeLerouxBundle/Resources/public/css/bootstrap.min.css'
-        '@TitomePeintrePhilippeLerouxBundle/Resources/public/zoombox/zoombox.css'
-        output='css/style.css'
+        'bundles/titomepeintrephilippeleroux/zoombox/zoombox.css'
+         filter='cssrewrite'
     %}
         <link href="{{ asset_url }}" rel="stylesheet" />
     {% endstylesheets %}

@@ -2,41 +2,51 @@
 
 {% block title %}Galerie - {{ parent() }}{% endblock %}
 
-{% block body %}
+{% block corps %}
     {{ parent() }}
-    <h1>Galerie</h1>
     
-    {#<table class="table table-striped">
-        {% set i = 0 %}
-            
-        {% for image in images %}
-            {% if i == 2 or i == 0 %}
-                <tr>
-            {% endif %}
-                    <td>
-                        <img src="{{ asset(('image/'~image.nom) | apply_filter('my_thumb')) }}" alt="{{ image.legende }}" />
-                        <p>{{ image.legende }}</p>
-                    </td>
-            {% set i = i + 1 %}    
-            {% if i == 2 or i == 0%}
-                </tr>
-                {% set i = 0 %}
-            {% endif %}
-        {% else %}
-            <p>Pas encore d'image !</p>
-        {% endfor %}
-    </table>#}
+    <section class="margin2pl">
+        <div class="page-headerRed margin4pr">
+            <h1 class="red">Galerie</h1>
+        </div>
+
+        <ul class="thumbnails">
+            {% for image in images %}
+                <li>
+                    <div class="thumbnail">
+                        <a href="{{ asset(('image/'~image.nom) | apply_filter('img')) }}" class="zoombox zgallery1">
+                            <img src="{{ asset(('image/'~image.nom) | apply_filter('my_thumb')) }}" alt="{{ image.legende }}" />
+                            <h5 class="red">{{ image.legende }}</h5>
+                        </a>
+                    </div>
+                </li>
+            {% else %}
+                <h5>Pas encore d'image !</h5>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}
     
-    <ul class="thumbnails">
-        {% for image in images %}
-            <li>
-                <div class="thumbnail">
-                    <img src="{{ asset(('image/'~image.nom) | apply_filter('my_thumb')) }}" alt="{{ image.legende }}" />
-                    <h5>{{ image.legende }}</h5>
-                </div>
-            </li>
-        {% else %}
-            <h5>Pas encore d'image !</h5>
-        {% endfor %}
-    </ul>
+{% block javascripts %}
+    {{ parent() }}
+    
+    <script type="text/javascript">
+    jQuery(function($){
+        $('a.zoombox').zoombox();
+
+        /**
+        * Or You can also use specific options*/
+        $('a.zoombox').zoombox({
+            theme       : 'zoombox',        //available themes : zoombox,lightbox, prettyphoto, darkprettyphoto, simple
+            opacity     : 0.8,              // Black overlay opacity
+            duration    : 800,              // Animation duration
+            animation   : true,             // Do we have to animate the box ?
+            width       : 600,              // Default width
+            height      : 400,              // Default height
+            gallery     : true,             // Allow gallery thumb view
+            autoplay : false                // Autoplay for video
+        });
+        
+    });
+    </script>
 {% endblock %}
