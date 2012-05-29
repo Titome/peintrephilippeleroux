@@ -21,6 +21,9 @@
                 output='main.js'
             %}
                 <script src="{{ asset_url }}"></script>
+                <script>
+                    $('.carousel').carousel()
+                </script>
             {% endjavascripts %}
         {% endblock %}
     </body>
