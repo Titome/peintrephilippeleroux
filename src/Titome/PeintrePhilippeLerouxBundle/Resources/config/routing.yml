@@ -1,10 +1,11 @@
 Admin:
   resource: "@TitomePeintrePhilippeLerouxBundle/Resources/config/routing_admin.yml"
   prefix:   /admin
-  
+
+#TODO : Inclure le carousel dans le controleur Default avec la présentation sur la page d'accueil
 Accueil:
   pattern:  /
-  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Default:index }
+  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Carousel:index }
   
 Galerie:
   pattern:  /galerie
