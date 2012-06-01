@@ -16,4 +16,9 @@ class CarouselController extends Controller
         
         return $this->render('TitomePeintrePhilippeLerouxBundle:Default:index.html.twig', array('images' => $images));
     }
+    
+    public function adminAction()
+    {
+        
+    }
 }
