@@ -75,8 +75,6 @@ class Image
     public function __construct()
     {
         $this->setCreat(new \DateTime);
-        $this->setActive(false);
-        $this->setOrdre(0);
     }
 
     /**
@@ -147,65 +145,5 @@ class Image
     public function getCreat()
     {
         return $this->creat;
-    }
-
-    /**
-     * Set legende
-     *
-     * @param text $legende
-     */
-    public function setLegende($legende)
-    {
-        $this->legende = $legende;
-    }
-
-    /**
-     * Get legende
-     *
-     * @return text 
-     */
-    public function getLegende()
-    {
-        return $this->legende;
-    }
-
-    /**
-     * Set active
-     *
-     * @param boolean $active
-     */
-    public function setActive($active)
-    {
-        $this->active = $active;
-    }
-
-    /**
-     * Get active
-     *
-     * @return boolean 
-     */
-    public function getActive()
-    {
-        return $this->active;
-    }
-
-    /**
-     * Set ordre
-     *
-     * @param integer $ordre
-     */
-    public function setOrdre($ordre)
-    {
-        $this->ordre = $ordre;
-    }
-
-    /**
-     * Get ordre
-     *
-     * @return integer 
-     */
-    public function getOrdre()
-    {
-        return $this->ordre;
     }
 }
