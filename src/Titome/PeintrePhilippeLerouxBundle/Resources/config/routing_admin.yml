@@ -1,3 +1,7 @@
 AjoutImage:
-  pattern:  /ajout-image
+  pattern:  /image/ajout
   defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Image:ajout }
+  
+AjoutCarousel:
+  pattern:  /carousel/ajout
+  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Carousel:ajout }
