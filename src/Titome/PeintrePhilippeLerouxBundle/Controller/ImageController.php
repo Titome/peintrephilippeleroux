@@ -5,7 +5,7 @@ namespace Titome\PeintrePhilippeLerouxBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Titome\PeintrePhilippeLerouxBundle\Entity\Image;
 use Titome\PeintrePhilippeLerouxBundle\Form\Handler\ImageHandler;
-use Titome\PeintrePhilippeLerouxBundle\Form\Type\ImageType;
+use Titome\PeintrePhilippeLerouxBundle\Form\Type\Image\AjoutType;
 
 
 class ImageController extends Controller

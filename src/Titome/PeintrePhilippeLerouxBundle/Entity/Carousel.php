@@ -3,6 +3,7 @@
 namespace Titome\PeintrePhilippeLerouxBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Titome\PeintrePhilippeLerouxBundle\Entity\Image;
 
 /**
  * Titome\PeintrePhilippeLerouxBundle\Entity\Carousel
@@ -41,7 +42,7 @@ class Carousel
      * @ORM\Column(name="legende", type="text")
      */
     private $legende;
-
+    
 
     /**
      * Get id

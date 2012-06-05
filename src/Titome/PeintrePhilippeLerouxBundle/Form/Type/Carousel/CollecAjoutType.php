@@ -10,7 +10,11 @@ class CollecAjoutType extends AbstractType
 {
     public function buildForm(FormBuilder $builder, array $options)
     {
-        $builder->add('images', 'collection', array('type' => new AjoutType));
+        $image = new AjoutType;
+        
+        $builder->add('images', 'collection', array(
+            'type'    => $image,
+            ));
     }
     
     public function getName()

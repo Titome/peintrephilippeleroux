@@ -22,8 +22,10 @@ class CarouselController extends Controller
     {
         $repository = $this->getDoctrine()->getEntityManager()->getRepository('TitomePeintrePhilippeLerouxBundle:Image');
         $images = $repository->findAll();
+        //$image = $repository->find(1);
         
         $form = $this->createForm(new CollecAjoutType(), $images);
+        //$form = $this->createForm(new AjoutType(), $image);
         
         return $this->render('TitomePeintrePhilippeLerouxBundle:Carousel:ajout.html.twig', array(
             'form'  => $form->createView(),

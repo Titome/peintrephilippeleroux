@@ -15,7 +15,7 @@ class ImageType extends AbstractType
     
     public function getName()
     {
-        return 'titome_peintrephilippelerouxbundle_imagetype';
+        return 'titome_peintrephilippelerouxbundle_image_ajouttype';
     }
     
     public function getDefaultOptions(array $options)
