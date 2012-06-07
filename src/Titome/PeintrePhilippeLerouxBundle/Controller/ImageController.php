@@ -10,10 +10,19 @@ use Titome\PeintrePhilippeLerouxBundle\Form\Type\Image\AjoutType;
 
 class ImageController extends Controller
 {
+    public function galerieAction()
+    {
+        $repository = $this->getDoctrine()->getEntityManager()->getRepository('TitomePeintrePhilippeLerouxBundle:Image');
+        
+        $images = $repository->findAll();
+        
+        return $this->render('TitomePeintrePhilippeLerouxBundle:Image:galerie.html.twig', array('images' => $images));
+    }
+    
     public function ajoutAction()
     {
         $image = new Image;
-        $form = $this->createForm(new ImageType(), $image);
+        $form = $this->createForm(new AjoutType(), $image);
         
         $formHandler = new ImageHandler($form, $this->getRequest(), $this->getDoctrine()->getEntityManager());
         
@@ -23,12 +32,17 @@ class ImageController extends Controller
         return $this->render('TitomePeintrePhilippeLerouxBundle:Image:ajout.html.twig', array('form' => $form->createView()));
     }
     
-    public function galerieAction()
+    public function modifAction($id)
     {
         $repository = $this->getDoctrine()->getEntityManager()->getRepository('TitomePeintrePhilippeLerouxBundle:Image');
+        $image = $repository->find($id);
         
-        $images = $repository->findAll();
+        $form = $this->createForm(new AjoutType(), $image);
+        $formHandler = new ImageHandler($form, $this->getRequest(), $this->getDoctrine()->getEntityManager());
         
-        return $this->render('TitomePeintrePhilippeLerouxBundle:Image:galerie.html.twig', array('images' => $images));
+        if ($formHandler->process())
+            return $this->redirect($this->generateUrl('Galerie'));
+        
+        return $this->render('TitomePeintrePhilippeLerouxBundle:Image:ajout.html.twig', array('form' => $form->createView()));
     }
 }

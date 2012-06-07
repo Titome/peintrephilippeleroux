@@ -16,8 +16,7 @@
     <div class="navbar">
         <div class="navbar-inner">
             <div class="container">
-                {# TODO: Faire une page d'accueil pour le panel d'administration #}
-                <a class="brand" href="#">Panel d'administration</a>
+                <a class="brand" href="{{ path('AccueilAdmin') }}">Panel d'administration</a>
                 <ul class="nav">
                     <li class="dropdown">
                         {# TODO: Faire une page pour la gestion des images #}
@@ -27,6 +26,29 @@
                         <ul class="dropdown-menu">
                             <li>
                                 <a href="{{ path('AjoutImage') }}">Ajouter</a>
+                            </li>
+                            <li>
+                                <a href="#">Modifier</a>
+                            </li>
+                            <li>
+                                <a href="#">Supprimer</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        {# TODO: Faire une page pour la gestion des images #}
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Carrousel <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="{{ path('AjoutCarousel') }}">Ajouter une image</a>
+                            </li>
+                            <li>
+                                <a href="#">Modifier l'ordre des images</a>
+                            </li>
+                            <li>
+                                <a href="#">Supprimer une image</a>
                             </li>
                         </ul>
                     </li>

@@ -1,6 +1,16 @@
+AccueilAdmin:
+  pattern:  /
+  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Default:admin }
+
 AjoutImage:
   pattern:  /image/ajout
   defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Image:ajout }
+  
+ModifierImage:
+  pattern:  /image/modification/{id}
+  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Carousel:modif }
+  requirements:
+    page: \d+
   
 AjoutCarousel:
   pattern:  /carousel/ajout

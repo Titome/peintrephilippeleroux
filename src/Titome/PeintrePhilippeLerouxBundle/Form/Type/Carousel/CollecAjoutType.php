@@ -21,6 +21,4 @@ class CollecAjoutType extends AbstractType
     {
         return 'titome_peintrephilippelerouxbundle_carousel_collecajouttype';
     }
-    
-    
 }
