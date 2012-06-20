@@ -10,3 +10,8 @@ Accueil:
 Galerie:
   pattern:  /galerie
   defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Image:galerie }
+  
+#TODO : À supprimer pour nettoyage
+Inter:
+  pattern : /c
+  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Default:inter }

@@ -1,16 +1,16 @@
 <?php
 
-namespace Titome\PeintrePhilippeLerouxBundle\Form\Type;
+namespace Titome\PeintrePhilippeLerouxBundle\Form\Type\Image;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilder;
 
-class ImageType extends AbstractType
+class AjoutType extends AbstractType
 {
     public function buildForm(FormBuilder $builder, array $options)
     {
         $builder->add('file', 'file', array('label' => 'Image'))
-                ->add('legende', 'text', array('label' => 'Légende'));
+                ->add('titre', 'text', array('label' => 'Titre'));
     }
     
     public function getName()

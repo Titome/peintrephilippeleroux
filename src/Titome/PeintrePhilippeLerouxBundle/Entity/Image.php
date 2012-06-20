@@ -53,7 +53,7 @@ class Image
     /**
      * @var text $legende
      * 
-     * @ORM\Column(name="legende", type="text")
+     * @ORM\Column(name="legende", type="text", nullable=true)
      */
     private $legende;
     
@@ -207,5 +207,15 @@ class Image
     public function getOrdre()
     {
         return $this->ordre;
+    }
+    
+    public function getFile()
+    {
+        return $this->file;
+    }
+    
+    public function setFile($file)
+    {
+        $this->file = $file;
     }
 }

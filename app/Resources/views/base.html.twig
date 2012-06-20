@@ -17,14 +17,15 @@
             {% javascripts        
                 '@TitomePeintrePhilippeLerouxBundle/Resources/public/js/jquery-1.7.2.min.js'
                 '@TitomePeintrePhilippeLerouxBundle/Resources/public/js/bootstrap.min.js'
-                '@TitomePeintrePhilippeLerouxBundle/Resources/public/zoombox/zoombox.js'
+                'bundles/titomepeintrephilippeleroux/zoombox/zoombox.js'
                 output='main.js'
             %}
                 <script src="{{ asset_url }}"></script>
-                <script>
-                    $('.carousel').carousel()
-                </script>
             {% endjavascripts %}
+                
+            <script>
+                $('.carousel').carousel()
+            </script>
         {% endblock %}
     </body>
 </html>

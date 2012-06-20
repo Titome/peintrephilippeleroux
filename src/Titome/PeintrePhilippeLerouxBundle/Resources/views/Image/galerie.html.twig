@@ -15,8 +15,8 @@
                 <li>
                     <div class="thumbnail">
                         <a href="{{ asset(('image/'~image.nom) | apply_filter('img')) }}" class="zoombox zgallery1">
-                            <img src="{{ asset(('image/'~image.nom) | apply_filter('my_thumb')) }}" alt="{{ image.legende }}" />
-                            <h5 class="red">{{ image.legende }}</h5>
+                            <img src="{{ asset(('image/'~image.nom) | apply_filter('my_thumb')) }}" alt="{{ image.titre }}" />
+                            <h5 class="red">{{ image.titre }}</h5>
                         </a>
                     </div>
                 </li>
