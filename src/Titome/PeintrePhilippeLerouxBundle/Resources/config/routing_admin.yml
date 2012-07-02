@@ -12,6 +12,12 @@ ModifierImage:
   requirements:
     page: \d+
   
+DeletePicture:
+  pattern:  /image/supprimer/{id}
+  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Image:delete }
+  requirements:
+    page: \d+
+
 AjoutCarousel:
   pattern:  /carousel/ajout
   defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Carousel:ajout }
