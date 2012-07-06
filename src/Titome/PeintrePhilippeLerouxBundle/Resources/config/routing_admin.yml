@@ -8,7 +8,7 @@ AjoutImage:
   
 ModifierImage:
   pattern:  /image/modification/{id}
-  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Carousel:modif }
+  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Image:modif }
   requirements:
     page: \d+
   

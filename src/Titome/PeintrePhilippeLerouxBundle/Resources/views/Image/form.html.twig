@@ -1,0 +1,15 @@
+{% extends "TitomePeintrePhilippeLerouxBundle::layoutAdmin.html.twig" %}
+
+{% block title %}{% block type_title %}{% endblock %} une image{{ parent() }}{% endblock %}
+
+{% block corps %}
+    <div class="container">
+        <h1>{% block type_h1 %}{% endblock %} une image</h1>
+
+        <form action="#" method="post" {{ form_enctype(form) }} class="well">
+            {{ form_widget(form) }}
+
+            <input type="submit" value="{% block intitule_btn %}{% endblock %}" class="btn"/>
+        </form>
+    </div>
+{% endblock %}

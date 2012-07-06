@@ -32,4 +32,9 @@ class CarouselController extends Controller
             
         ));
     }
+    
+    public function modifAction($id)
+    {
+        
+    }
 }

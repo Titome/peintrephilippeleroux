@@ -1,15 +1,8 @@
-{% extends "TitomePeintrePhilippeLerouxBundle::layoutAdmin.html.twig" %}
+{% extends "TitomePeintrePhilippeLerouxBundle:Image:form.html.twig" %}
 
-{% block title %}Ajouter une image{{ parent() }}{% endblock %}
+{% set type = 'Ajouter' %}
 
-{% block corps %}
-    <div class="container">
-        <h1>Ajouter une image</h1>
+{% block type_title %}{{ type }}{% endblock %}
+{% block type_h1 %}{{ type }}{% endblock %}
 
-        <form action="#" method="post" {{ form_enctype(form) }} class="well">
-            {{ form_widget(form) }}
-
-            <input type="submit" value="Envoyer l'image" class="btn"/>
-        </form>
-    </div>
-{% endblock %}
+{% block intitule_btn %}Envoyer l'image{% endblock %}
