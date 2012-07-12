@@ -61,6 +61,8 @@ jms_security_extra:
     
 avalanche_imagine:
     filters:
+        # Lors de la création d'un nouveau filtre,  penser à rajouter un moyen de supprimer l'image créée dans la méthode
+        # deleteAction du contrôleur ImageController
         my_thumb:
             type:    thumbnail
             options: { size: [400, 400], mode: inset }

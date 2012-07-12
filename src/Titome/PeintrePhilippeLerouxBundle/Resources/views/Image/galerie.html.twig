@@ -6,6 +6,12 @@
     {{ parent() }}
     
     <section class="margin2pl">
+        {% if app.session.hasFlash('notice') %}
+            <div class="alert alert-success">
+                <a class="close" data-dismiss="alert" href="#">x</a>
+                <h4 class="alert-heading">{{ app.session.flash('notice') }}</h4>
+            </div>
+	{% endif %}
         <div class="page-headerRed margin4pr">
             <h1 class="red">Galerie</h1>
         </div>
@@ -19,9 +25,26 @@
                             <h5 class="red">{{ image.titre }}</h5>
                         </a>
                         <a class="btn" href="{{ path('ModifierImage', { 'id' : image.id }) }}">Modifier</a>
-                        <a class="btn" href="{{ path('DeletePicture', { 'id' : image.id }) }}">Supprimer</a>
+                        <a class="btn" data-toggle="modal" href="#myModal{{ image.id }}">Supprimer</a>
+                        {#<a class="btn" href="{{ path('DeletePicture', { 'id' : image.id }) }}">Supprimer</a>#}
                     </div>
                 </li>
+                
+                <div class="modal hide" id="myModal{{ image.id }}">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">x</button>
+				<h3>Voulez-vous vraiment supprimez ...?</h3>
+			</div>
+			<div class="modal-body">
+				<img src="{{ asset(('image/'~image.nom) | apply_filter('my_thumb')) }}" alt="{{ image.titre }}" />
+			</div>
+			<div class="modal-footer">
+				<a href="#" class="btn" data-dismiss="modal">Annuler</a>
+				<a href="{{ path('DeletePicture', { 'id' : image.id }) }}" class="btn btn-primary">
+                                    Confirmer la suppression
+                                </a>
+			</div>
+		</div>
             {% else %}
                 <h5>Pas encore d'image !</h5>
             {% endfor %}
