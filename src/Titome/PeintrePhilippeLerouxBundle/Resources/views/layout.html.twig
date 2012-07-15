@@ -19,7 +19,7 @@
     <div class="navbar-red">
         <div class="navbar-inner">
             <div class="container">
-                {# TODO: Faire une page d'accueil du site #}
+                {# TODO: Finir la page d'accueil du site #}
                 <a class="brand" href="{{ path('Accueil') }}">PHILIPPE LEROUX</a>
                 <ul class="nav">
                     <li class="dropdown"><a href="#">Exposition</a></li>
@@ -27,7 +27,13 @@
                     <li class="dropdown"><a href="{{ path('Galerie') }}">Galerie</a></li>
                     <li class="dropdown"><a href="#">Livres</a></li>
                     <li class="dropdown"><a href="#">Contact</a></li>
-                    <li class="dropdown"><a href="#">Biographie</a></li>
+                    <li class="dropdown"><a href="#">Biographie</a></li>                    
+                </ul>
+                <ul class="nav pull-right">
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        <li><span>Bonjour {{ app.user.username }} !</span></li>
+                        <li><a href="{{ path('fos_user_security_logout') }}">Déconnexion</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </div>

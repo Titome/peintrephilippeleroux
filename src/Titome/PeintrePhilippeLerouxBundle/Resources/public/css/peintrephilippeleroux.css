@@ -77,6 +77,10 @@
   display: block;
   float: left;
 }
+.navbar-red .nav > li > span {
+  display: block;
+  padding: 9px 10px 11px;
+}
 .navbar-red .nav > li > a {
   float: none;
   padding: 9px 10px 11px;

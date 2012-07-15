@@ -18,6 +18,10 @@
 .margin4pr {
   margin-right: 4%;
 }
+.center {
+  width: 800px;
+  margin: auto;
+}
 .navbar-red {
   *position: relative;
   *z-index: 2;

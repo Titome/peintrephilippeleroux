@@ -68,6 +68,16 @@
   float: left;
 }
 
+// Texte
+.navbar-red .nav > li > span {
+display: block;
+    
+  // Vertically center the text given @navbarHeight
+  @elementHeight: 20px;
+  padding: ((@navbarHeight - @elementHeight) / 2 - 1) 10px ((@navbarHeight - @elementHeight) / 2 + 1);
+  
+}
+
 // Links
 .navbar-red .nav > li > a {
   float: none;
