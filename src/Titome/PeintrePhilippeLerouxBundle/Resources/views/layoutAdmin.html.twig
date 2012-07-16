@@ -5,7 +5,7 @@
 {% block stylesheets %}
     {{ parent() }}
 
-    {% stylesheets 
+    {% stylesheets
         '@TitomePeintrePhilippeLerouxBundle/Resources/public/css/bootstrap-responsive.min.css'
         '@TitomePeintrePhilippeLerouxBundle/Resources/public/css/bootstrap.min.css'
         output='css/style.css'
@@ -56,8 +56,9 @@
                     </li>
                 </ul>
                 <ul class="nav pull-right">
-                    <li><span>Bonjour {{ app.user.username }} !</span></li>
-                    <li><a href="{{ path('AccueilAdmin') }}">Adminstration</a></li>
+                    {# TODO : Changer le lien par un span comme dans le front-end #}
+                    <li><a>Bonjour {{ app.user.username }} !</a></li>
+                    <li><a href="{{ path('Accueil') }}">Adminstration</a></li>
                     <li><a href="{{ path('fos_user_security_logout') }}">Déconnexion</a></li>
                 </ul>
             </div>
