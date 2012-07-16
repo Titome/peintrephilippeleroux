@@ -22,6 +22,9 @@
   width: 800px;
   margin: auto;
 }
+.navbar-red .nav > li > span {
+  display: block;
+}
 .navbar-red {
   *position: relative;
   *z-index: 2;

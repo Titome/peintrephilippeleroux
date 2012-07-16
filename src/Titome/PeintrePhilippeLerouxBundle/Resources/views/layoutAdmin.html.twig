@@ -55,6 +55,11 @@
                         </ul>
                     </li>
                 </ul>
+                <ul class="nav pull-right">
+                    <li><span>Bonjour {{ app.user.username }} !</span></li>
+                    <li><a href="{{ path('AccueilAdmin') }}">Adminstration</a></li>
+                    <li><a href="{{ path('fos_user_security_logout') }}">Déconnexion</a></li>
+                </ul>
             </div>
         </div>
     </div>

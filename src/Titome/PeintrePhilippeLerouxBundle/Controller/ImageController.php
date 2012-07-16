@@ -2,6 +2,7 @@
 
 namespace Titome\PeintrePhilippeLerouxBundle\Controller;
 
+use JMS\SecurityExtraBundle\Annotation\Secure;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Titome\PeintrePhilippeLerouxBundle\Entity\Image;
 use Titome\PeintrePhilippeLerouxBundle\Form\Handler\Image\AjoutHandler;
@@ -21,6 +22,9 @@ class ImageController extends Controller
         return $this->render('TitomePeintrePhilippeLerouxBundle:Image:galerie.html.twig', array('images' => $images));
     }
     
+    /**
+     * @Secure(roles="ROLE_ADMIN")
+     */
     public function ajoutAction()
     {
         $image = new Image;
@@ -34,6 +38,9 @@ class ImageController extends Controller
         return $this->render('TitomePeintrePhilippeLerouxBundle:Image:ajout.html.twig', array('form' => $form->createView()));
     }
     
+    /**
+     * @Secure(roles="ROLE_ADMIN")
+     */
     public function modifAction($id)
     {
         $repository = $this->getDoctrine()->getEntityManager()->getRepository('TitomePeintrePhilippeLerouxBundle:Image');
@@ -51,6 +58,9 @@ class ImageController extends Controller
         return $this->render('TitomePeintrePhilippeLerouxBundle:Image:modif.html.twig', array('form' => $form->createView()));
     }
     
+    /**
+     * @Secure(roles="ROLE_ADMIN")
+     */
     public function deleteAction($id)
     {
         $em = $this->getDoctrine()->getEntityManager();

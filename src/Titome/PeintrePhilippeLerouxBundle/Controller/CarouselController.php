@@ -2,6 +2,7 @@
 
 namespace Titome\PeintrePhilippeLerouxBundle\Controller;
 
+use JMS\SecurityExtraBundle\Annotation\Secure;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Titome\PeintrePhilippeLerouxBundle\Form\Type\Carousel\AjoutType;
 use Titome\PeintrePhilippeLerouxBundle\Form\Type\Carousel\CollecAjoutType;
@@ -18,6 +19,9 @@ class CarouselController extends Controller
         return $this->render('TitomePeintrePhilippeLerouxBundle:Default:index.html.twig', array('images' => $images));
     }
     
+    /**
+     * @Secure(roles="ROLE_ADMIN")
+     */
     public function ajoutAction()
     {
         $repository = $this->getDoctrine()->getEntityManager()->getRepository('TitomePeintrePhilippeLerouxBundle:Image');

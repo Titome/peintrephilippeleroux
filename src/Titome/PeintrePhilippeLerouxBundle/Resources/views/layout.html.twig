@@ -32,6 +32,7 @@
                 <ul class="nav pull-right">
                     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                         <li><span>Bonjour {{ app.user.username }} !</span></li>
+                        <li><a href="{{ path('AccueilAdmin') }}">Adminstration</a></li>
                         <li><a href="{{ path('fos_user_security_logout') }}">Déconnexion</a></li>
                     {% endif %}
                 </ul>

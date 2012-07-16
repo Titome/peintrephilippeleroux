@@ -22,6 +22,9 @@
   width: 800px;
   margin: auto;
 }
+.navbar-red .nav > li > span {
+  display: block;
+}
 .navbar-red {
   *position: relative;
   *z-index: 2;
@@ -76,6 +79,10 @@
 .navbar-red .nav > li {
   display: block;
   float: left;
+}
+.navbar-red .nav > li > span {
+  display: block;
+  padding: 9px 10px 11px;
 }
 .navbar-red .nav > li > a {
   float: none;
