@@ -2,3 +2,4 @@
 /app/cache/*
 /app/logs/*
 /web/image/*
+/web/media/*
