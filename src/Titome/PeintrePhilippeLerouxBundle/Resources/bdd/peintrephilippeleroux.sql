@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le : Lun 18 Juin 2012 à 21:50
+-- Généré le : Mar 17 Juillet 2012 à 14:43
 -- Version du serveur: 5.5.24
--- Version de PHP: 5.3.10-1ubuntu3.1
+-- Version de PHP: 5.3.10-1ubuntu3.2
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -49,19 +49,53 @@ CREATE TABLE IF NOT EXISTS `Image` (
   `active` tinyint(1) NOT NULL,
   `ordre` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Contenu de la table `Image`
 --
 
 INSERT INTO `Image` (`id`, `nom`, `legende`, `creat`, `titre`, `active`, `ordre`) VALUES
-(1, '4fb127f888766-balade-au-crepuscule.jpg', 'Balade au crépuscule', '2012-05-14 17:42:48', '', 0, 0),
-(2, '4fc0d125531e3-arreter-le-temps.jpg', 'Arreter le temps', '2012-05-26 14:48:36', '', 0, 0),
-(3, '4fc0d165d6528-balade-d''automne.jpg', 'Balade d''automne', '2012-05-26 14:49:41', '', 0, 0),
-(4, '4fc0d48e37a89-Daniel-en-manoeuvre.jpg', 'Daniel en manoeuvre', '2012-05-26 15:03:10', '', 0, 0),
-(5, '4fc0d4b21c833-Fin-de-journee-a-l''estacade.jpg', 'Fin de journée à l''escatade', '2012-05-26 15:03:46', '', 0, 0),
-(6, '4fdf41b7bbdc4-douce-soiree-2.jpg', NULL, '2012-06-18 16:56:55', 'Douce soirée 2', 0, 0);
+(1, '4fb127f888766-balade-au-crepuscule.jpg', NULL, '2012-05-14 17:42:48', 'Balade au crépuscule', 0, 0),
+(2, '4fc0d125531e3-arreter-le-temps.jpg', NULL, '2012-05-26 14:48:36', 'Arreter le temps', 0, 0),
+(3, '4fc0d165d6528-balade-d''automne.jpg', '', '2012-05-26 14:49:41', 'Balade d''automne', 0, 0),
+(4, '4fc0d48e37a89-Daniel-en-manoeuvre.jpg', '', '2012-05-26 15:03:10', 'Daniel en manoeuvre', 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `User`
+--
+
+CREATE TABLE IF NOT EXISTS `User` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) NOT NULL,
+  `username_canonical` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `email_canonical` varchar(255) NOT NULL,
+  `enabled` tinyint(1) NOT NULL,
+  `salt` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `last_login` datetime DEFAULT NULL,
+  `locked` tinyint(1) NOT NULL,
+  `expired` tinyint(1) NOT NULL,
+  `expires_at` datetime DEFAULT NULL,
+  `confirmation_token` varchar(255) DEFAULT NULL,
+  `password_requested_at` datetime DEFAULT NULL,
+  `roles` longtext NOT NULL COMMENT '(DC2Type:array)',
+  `credentials_expired` tinyint(1) NOT NULL,
+  `credentials_expire_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UNIQ_2DA1797792FC23A8` (`username_canonical`),
+  UNIQUE KEY `UNIQ_2DA17977A0D96FBF` (`email_canonical`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Contenu de la table `User`
+--
+
+INSERT INTO `User` (`id`, `username`, `username_canonical`, `email`, `email_canonical`, `enabled`, `salt`, `password`, `last_login`, `locked`, `expired`, `expires_at`, `confirmation_token`, `password_requested_at`, `roles`, `credentials_expired`, `credentials_expire_at`) VALUES
+(1, 'Titome', 'titome', 'girard.timothee@gmail.com', 'girard.timothee@gmail.com', 1, 'qxo2wgdapjkcw80sk8k8oo4so88skc4', 'bxOCTKXNkmvzLZ045eaWresMw0gqGPshApRV2acxUGHGy+vVr+63nu6Gqt6/0prcbqY3BhXAeGfsAGBFtP0MUQ==', '2012-07-17 00:43:59', 0, 0, NULL, 'rclc44c5uxwwcs4ko0o0c0swckgksk88ssco8s4w84gk0ogco', NULL, 'a:1:{i:0;s:10:"ROLE_ADMIN";}', 0, NULL);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
