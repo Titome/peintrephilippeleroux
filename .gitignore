@@ -3,3 +3,4 @@
 /app/config/parameters.ini
 /app/logs/*
 /web/image/*
+/web/media/*
