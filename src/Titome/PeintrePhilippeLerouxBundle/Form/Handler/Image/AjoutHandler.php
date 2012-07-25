@@ -45,7 +45,7 @@ class AjoutHandler
         $nom = uniqid().'-'.$image->getFile()->getClientOriginalName();
         
         $image->setNom($nom);
-        $image->getFile()->move(__DIR__.'/../../../../../web/image', $nom);
+        $image->getFile()->move(__DIR__.'/../../../../../../web/image', $nom);
         
         $this->em->persist($image);
         $this->em->flush();
