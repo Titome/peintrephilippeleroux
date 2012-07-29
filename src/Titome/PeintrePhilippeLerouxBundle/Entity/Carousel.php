@@ -30,18 +30,16 @@ class Carousel
     private $image;
 
     /**
-     * @var string $titre
+     * @var integer $ordre
      *
-     * @ORM\Column(name="titre", type="string", length=255)
+     * @ORM\Column(name="ordre", type="integer")
      */
-    private $titre;
-
-    /**
-     * @var text $legende
-     *
-     * @ORM\Column(name="legende", type="text")
+    private $ordre;
+    
+    /*
+     * @Assert\Image
      */
-    private $legende;
+    private $file;
     
 
     /**
@@ -75,42 +73,32 @@ class Carousel
     }
 
     /**
-     * Set titre
+     * Set ordre
      *
-     * @param string $titre
+     * @param integer $ordre
      */
-    public function setTitre($titre)
+    public function setOrdre($ordre)
     {
-        $this->titre = $titre;
+        $this->ordre = $ordre;
     }
 
     /**
-     * Get titre
+     * Get ordre
      *
-     * @return string 
+     * @return integer
      */
-    public function getTitre()
+    public function getOrdre()
     {
-        return $this->titre;
+        return $this->ordre;
     }
-
-    /**
-     * Set legende
-     *
-     * @param text $legende
-     */
-    public function setLegende($legende)
+    
+    public function getFile()
     {
-        $this->legende = $legende;
+        return $this->file;
     }
-
-    /**
-     * Get legende
-     *
-     * @return text 
-     */
-    public function getLegende()
+    
+    public function setFile($file)
     {
-        return $this->legende;
+        $this->file = $file;
     }
 }

@@ -35,7 +35,14 @@ class Image
      * @ORM\Column(name="titre", type="string", length=255)
      */
     private $titre;
-
+    
+    /**
+     * @var text $legende
+     * 
+     * @ORM\Column(name="legende", type="text", nullable=true)
+     */
+    private $legende;
+    
     /**
      * @var datetime $creat
      *
@@ -47,29 +54,6 @@ class Image
      * @Assert\Image 
      */
     private $file;
-    
-    //CAROUSEL
-    
-    /**
-     * @var text $legende
-     * 
-     * @ORM\Column(name="legende", type="text", nullable=true)
-     */
-    private $legende;
-    
-    /**
-     * @var boolean $active
-     * 
-     * @ORM\Column(name="active", type="boolean")
-     */
-    private $active;
-    
-    /**
-     * @var integer $ordre
-     * 
-     * @ORM\Column(name="ordre", type="integer")
-     */
-    private $ordre;
 
 
     public function __construct()
@@ -167,46 +151,6 @@ class Image
     public function getLegende()
     {
         return $this->legende;
-    }
-
-    /**
-     * Set active
-     *
-     * @param boolean $active
-     */
-    public function setActive($active)
-    {
-        $this->active = $active;
-    }
-
-    /**
-     * Get active
-     *
-     * @return boolean 
-     */
-    public function getActive()
-    {
-        return $this->active;
-    }
-
-    /**
-     * Set ordre
-     *
-     * @param integer $ordre
-     */
-    public function setOrdre($ordre)
-    {
-        $this->ordre = $ordre;
-    }
-
-    /**
-     * Get ordre
-     *
-     * @return integer 
-     */
-    public function getOrdre()
-    {
-        return $this->ordre;
     }
     
     public function getFile()
