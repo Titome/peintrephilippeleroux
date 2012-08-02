@@ -4,15 +4,10 @@
 
 {% block corps %}
     <div class="container">
-        <h1>Ajouter une image</h1>
+        <h1>Ajouter une image au carrousel</h1>
 
         <form action="#" method="post" {{ form_enctype(form) }} class="well">
-            {% for emailField in form.images %}
-                <li>
-                    {{ form_errors(emailField) }}
-                    {{ form_widget(emailField) }}
-                </li>
-            {% endfor %}
+            {{ form_widget(form) }}
 
             <input type="submit" value="Envoyer l'image" class="btn"/>
         </form>

@@ -9,8 +9,7 @@ class AjoutType extends AbstractType
 {
     public function buildForm(FormBuilder $builder, array $options)
     {
-        $builder->add('nom')
-                ->add('active');
+        $builder->add('file', 'file', array('label' => 'Image'));
     }
     
     public function getName()
@@ -20,6 +19,6 @@ class AjoutType extends AbstractType
     
     public function getDefaultOptions(array $options)
     {
-        return array('data_class' => 'Titome\PeintrePhilippeLerouxBundle\Entity\Image');
+        return array('data_class' => 'Titome\PeintrePhilippeLerouxBundle\Entity\Carousel');
     }
 }
