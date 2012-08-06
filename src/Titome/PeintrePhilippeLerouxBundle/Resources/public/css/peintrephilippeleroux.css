@@ -240,3 +240,6 @@
     display: block;
   }
 }
+.thumbnails > li {
+  height: 460px;
+}

@@ -21,3 +21,11 @@ DeletePicture:
 AjoutCarousel:
   pattern:  /carousel/ajout
   defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Carousel:ajout }
+  
+OrdreCarousel:
+  pattern:  /carousel/ordre
+  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Carousel:ordre }
+  
+ModifCarousel:
+  pattern:  /carousel/modification/{id}
+  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Carousel:modif }

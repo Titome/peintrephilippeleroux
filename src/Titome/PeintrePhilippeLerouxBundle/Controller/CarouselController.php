@@ -40,8 +40,15 @@ class CarouselController extends Controller
         ));
     }
     
-    public function modifAction($id)
+    /**
+     * @Secure(roles="ROLE_ADMIN")
+     */
+    public function ordreAction()
     {
+        $repository = $this->getDoctrine()->getEntityManager()->getRepository('TitomePeintrePhilippeLerouxBundle:Carousel');
         
+        $images = $repository->findBy(array(), array('ordre' => 'ASC'));
+        
+        return $this->render('TitomePeintrePhilippeLerouxBundle:Carousel:ordre.html.twig', array('images' => $images));
     }
 }

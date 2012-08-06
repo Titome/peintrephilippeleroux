@@ -1,0 +1,25 @@
+{% extends "TitomePeintrePhilippeLerouxBundle::layoutAdmin.html.twig" %}
+
+{% block title %}Modifier l'ordre des images dans le carousel{{ parent() }}{% endblock %}
+
+{% block corps %}
+    <div class="container">
+        <h1>Modifier l'ordre des images dans le carrousel</h1>
+
+        <ul class="thumbnails">
+            {% for image in images %}
+                <li>
+                    <div class="thumbnail">
+                        <a href="{{ path('ModifCarousel', { 'id' : image.ordre}) }}">
+                            <img src="{{ asset(('image/'~image.image) | apply_filter('my_thumb')) }}" alt="{{ image.image }}" />
+                            <h5 class="red">N°{{ image.ordre }}</h5>
+                            <p>Modifier son ordre</p>
+                        </a>
+                    </div>
+                </li>
+            {% else %}
+                <h5>Pas encore d'image !</h5>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
