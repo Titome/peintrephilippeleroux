@@ -51,4 +51,12 @@ class CarouselController extends Controller
         
         return $this->render('TitomePeintrePhilippeLerouxBundle:Carousel:ordre.html.twig', array('images' => $images));
     }
+    
+    /**
+     * @Secure(roles="ROLE_ADMIN")
+     */
+    public function modifAction($id)
+    {
+        
+    }
 }
