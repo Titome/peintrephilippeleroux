@@ -29,3 +29,15 @@ OrdreCarousel:
 ModifCarousel:
   pattern:  /carousel/modification/{id}
   defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Carousel:modif }
+  requirements:
+    page: \d+
+    
+DeleteViewCarousel:
+  pattern:  /carousel/supprimer
+  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Carousel:deleteView }
+  
+DeleteCarousel:
+  pattern:  /carousel/supprimer/{id}
+  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Carousel:delete }
+  requirements:
+    page: \d+

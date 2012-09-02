@@ -68,8 +68,7 @@ class ImageController extends Controller
         
         unlink(__DIR__.'/../../../../web/image/'.$image->getNom());
         unlink(__DIR__.'/../../../../web/media/cache/my_thumb/image/'.$image->getNom());
-        // TODO : À déplacer dans le carousel
-        //unlink(__DIR__.'/../../../../web/media/cache/img/image/'.$image->getNom());
+        unlink(__DIR__.'/../../../../web/media/cache/img/image/'.$image->getNom());
         
         $em->remove($image);
         $em->flush();
