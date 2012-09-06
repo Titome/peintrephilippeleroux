@@ -17,7 +17,7 @@
             {% for image in images %}
                 <li>
                     <div class="thumbnail">
-                        <a href="{{ path('DeleteCarousel', { 'id' : image.id}) }}">
+                        <a data-toggle="modal" href="#myModal{{ image.id }}">
                             <img src="{{ asset(('image/'~image.image) | apply_filter('my_thumb')) }}" alt="{{ image.image }}" />
                             <p>Supprimer</p>
                         </a>
@@ -30,11 +30,11 @@
                         <h3>Voulez-vous vraiment supprimez ...?</h3>
                     </div>
                     <div class="modal-body">
-                        <img src="{{ asset(('image/'~image.nom) | apply_filter('my_thumb')) }}" alt="{{ image.titre }}" />
+                        <img src="{{ asset(('image/'~image.image) | apply_filter('my_thumb')) }}" alt="{{ image.image }}" />
                     </div>
                     <div class="modal-footer">
                         <a href="#" class="btn" data-dismiss="modal">Annuler</a>
-                                    <a href="{{ path('DeletePicture', { 'id' : image.id }) }}" class="btn btn-primary">
+                                    <a href="{{ path('DeleteCarousel', { 'id' : image.id }) }}" class="btn btn-primary">
                                         Confirmer la suppression
                                     </a>
                             </div>
@@ -44,4 +44,8 @@
             {% endfor %}
         </ul>
     </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
 {% endblock %}
