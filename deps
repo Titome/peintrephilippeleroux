@@ -74,3 +74,8 @@
     git=http://github.com/FriendsOfSymfony/FOSUserBundle.git
     target=bundles/FOS/UserBundle
     version=v1.2.4
+
+[IvoryCKEditorBundle]
+    git=http://github.com/egeloen/IvoryCKEditorBundle.git
+    target=/bundles/Ivory/CKEditorBundle
+    version=origin/2.0
