@@ -1,7 +1,9 @@
+# Admin
 AccueilAdmin:
   pattern:  /
   defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Default:admin }
 
+# Image
 AjoutImage:
   pattern:  /image/ajout
   defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Image:ajout }
@@ -18,6 +20,7 @@ DeletePicture:
   requirements:
     page: \d+
 
+# Carousel
 AjoutCarousel:
   pattern:  /carousel/ajout
   defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Carousel:ajout }
@@ -41,3 +44,8 @@ DeleteCarousel:
   defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Carousel:delete }
   requirements:
     page: \d+
+    
+# Bio
+ModifBio:
+  pattern:  /biographie/modification
+  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Bio:ajout }

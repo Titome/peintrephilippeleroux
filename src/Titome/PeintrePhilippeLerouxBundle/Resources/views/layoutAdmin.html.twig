@@ -30,10 +30,10 @@
                                 <a href="{{ path('AjoutImage') }}">Ajouter</a>
                             </li>
                             <li>
-                                <a href="#">Modifier</a>
+                                <a href="{{ path('Galerie') }}">Modifier</a>
                             </li>
                             <li>
-                                <a href="#">Supprimer</a>
+                                <a href="{{ path('Galerie') }}">Supprimer</a>
                             </li>
                         </ul>
                     </li>
@@ -51,6 +51,16 @@
                             </li>
                             <li>
                                 <a href="{{ path('DeleteViewCarousel') }}">Supprimer une image</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Biographie <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="{{ path('ModifBio') }}">Modifier la biographie</a>
                             </li>
                         </ul>
                     </li>

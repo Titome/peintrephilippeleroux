@@ -20,7 +20,8 @@ class AppKernel extends Kernel
             new Avalanche\Bundle\ImagineBundle\AvalancheImagineBundle(),
             new Titome\PeintrePhilippeLerouxBundle\TitomePeintrePhilippeLerouxBundle(),
             new Titome\UserBundle\TitomeUserBundle(),
-            new FOS\UserBundle\FOSUserBundle(),            
+            new FOS\UserBundle\FOSUserBundle(),
+            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

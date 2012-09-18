@@ -59,8 +59,6 @@ class Image
     public function __construct()
     {
         $this->setCreat(new \DateTime);
-        $this->setActive(false);
-        $this->setOrdre(0);
     }
 
     /**
