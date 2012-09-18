@@ -1,0 +1,11 @@
+{% extends "TitomePeintrePhilippeLerouxBundle::layout.html.twig" %}
+
+{% block title %}Biographie - {{ parent() }}{% endblock %}
+
+{% block corps %}
+    {{ parent() }}
+
+    <section>
+        <p>{{ bio.bio | raw }}</p>
+    </section>
+{% endblock %}

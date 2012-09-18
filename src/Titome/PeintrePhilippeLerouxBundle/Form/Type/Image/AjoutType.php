@@ -11,8 +11,7 @@ class AjoutType extends AbstractType
     {
         $builder->add('file', 'file', array('label' => 'Image'))
                 ->add('titre', 'text', array('label' => 'Titre'))
-                ->add('legende', 'textarea', array('label' => 'Légende'))
-                ->add('test', 'ckeditor');
+                ->add('legende', 'textarea', array('label' => 'Légende'));
     }
     
     public function getName()
