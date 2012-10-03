@@ -3,12 +3,12 @@
 namespace Titome\PeintrePhilippeLerouxBundle\Form\Type\Carousel;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormBuilder;
+use Symfony\Component\Form\FormBuilderInterface;
 use Titome\PeintrePhilippeLerouxBundle\Form\Type\Carousel\AjoutType;
 
 class CollecAjoutType extends AbstractType
 {
-    public function buildForm(FormBuilder $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $image = new AjoutType;
         

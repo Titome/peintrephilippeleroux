@@ -1,20 +1,22 @@
 imports:
-    - { resource: parameters.ini }
+    - { resource: parameters.yml }
     - { resource: security.yml }
 
 framework:
+    default_locale: %locale%
     #esi:             ~
     translator:      { fallback: %locale% }
+    trust_proxy_headers: false
     secret:          %secret%
-    charset:         UTF-8
-    router:          { resource: "%kernel.root_dir%/config/routing.yml" }
+    #charset:         UTF-8
+    router:          
+      resource: "%kernel.root_dir%/config/routing.yml"
+      strict_requirements: %kernel.debug%
     form:            true
     csrf_protection: true
     validation:      { enable_annotations: true }
     templating:      { engines: ['twig'] } #assets_version: SomeVersionScheme
-    session:
-        default_locale: %locale%
-        auto_start:     true
+    session:  ~
 
 # Twig Configuration
 twig:
@@ -23,6 +25,7 @@ twig:
 
 # Assetic Configuration
 assetic:
+    bundles: [TitomePeintrePhilippeLerouxBundle]
     debug:          %kernel.debug%
     use_controller: false
     # java: /usr/bin/java
@@ -50,14 +53,11 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
+    spool: { type: memory }
     transport: %mailer_transport%
     host:      %mailer_host%
     username:  %mailer_user%
     password:  %mailer_password%
-
-jms_security_extra:
-    secure_controllers:  true
-    secure_all_services: false
     
 avalanche_imagine:
     filters:

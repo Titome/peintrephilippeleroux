@@ -3,11 +3,11 @@
 namespace Titome\PeintrePhilippeLerouxBundle\Form\Type\Bio;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormBuilder;
+use Symfony\Component\Form\FormBuilderInterface;
 
 class AjoutType extends AbstractType
 {
-    public function buildForm(FormBuilder $builder, array $options)
+    public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('bio', 'ckeditor', array('label' => 'Biographie'));
     }
