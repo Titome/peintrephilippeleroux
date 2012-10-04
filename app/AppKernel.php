@@ -21,9 +21,9 @@ class AppKernel extends Kernel
             new Titome\PeintrePhilippeLerouxBundle\TitomePeintrePhilippeLerouxBundle(),
             new Titome\UserBundle\TitomeUserBundle(),
             new FOS\UserBundle\FOSUserBundle(),
-            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
             new JMS\AopBundle\JMSAopBundle(),
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
+            new Trsteel\CkeditorBundle\TrsteelCkeditorBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

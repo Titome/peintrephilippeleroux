@@ -21,7 +21,7 @@
         "imagine/imagine": "*",
         "avalanche123/imagine-bundle": "*",
         "friendsofsymfony/user-bundle": "*",
-        "egeloen/ckeditor-bundle": "*"
+        "Trsteel/ckeditor-bundle": "*"
     },
     "scripts": {
         "post-install-cmd": [
