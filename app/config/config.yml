@@ -74,3 +74,11 @@ fos_user:
     db_driver:     orm                        # Le type de BDD à utiliser, nous utilisons l'ORM Doctrine depuis le début
     firewall_name: main                       # Le nom du firewall duquel on utilisera ces utilisateurs
     user_class:    Titome\UserBundle\Entity\User # La classe de l'entité User que nous venons de définir
+    
+trsteel_ckeditor:
+  filebrowser_browse_url: "/peintrephilippeleroux/web/bundles/titomepeintrephilippeleroux/kcfinder/browse.php?type=files"
+  filebrowser_upload_url: "/peintrephilippeleroux/web/bundles/titomepeintrephilippeleroux/kcfinder/upload.php?type=files"
+  filebrowser_image_browse_url: "/peintrephilippeleroux/web/bundles/titomepeintrephilippeleroux/kcfinder/browse.php?type=images"
+  filebrowser_image_upload_url: "/peintrephilippeleroux/web/bundles/titomepeintrephilippeleroux/kcfinder/upload.php?type=images"
+  filebrowser_flash_browse_url: "/peintrephilippeleroux/web/bundles/titomepeintrephilippeleroux/kcfinder/browse.php?type=flash"
+  filebrowser_flash_upload_url: "/peintrephilippeleroux/web/bundles/titomepeintrephilippeleroux/kcfinder/upload.php?type=flash"
