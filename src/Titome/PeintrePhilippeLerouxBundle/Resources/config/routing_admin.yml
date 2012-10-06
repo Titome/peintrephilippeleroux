@@ -49,3 +49,8 @@ DeleteCarousel:
 ModifBio:
   pattern:  /biographie/modification
   defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Bio:ajout }
+  
+# Expo
+ModifExpo:
+  pattern:  /expositions/modification
+  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Expo:ajout }
