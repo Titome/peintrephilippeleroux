@@ -14,3 +14,7 @@ Galerie:
 Bio:
   pattern:  /biographie
   defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Bio:index }
+  
+Expo:
+  pattern:  /exposition
+  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Expo:index }
