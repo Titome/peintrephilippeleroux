@@ -54,3 +54,8 @@ ModifBio:
 ModifExpo:
   pattern:  /expositions/modification
   defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Expo:ajout }
+
+# Actu
+ModifActu:
+  pattern:  /actualite/modification
+  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Actu:ajout }

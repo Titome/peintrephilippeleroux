@@ -18,3 +18,7 @@ Bio:
 Expo:
   pattern:  /exposition
   defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Expo:index }
+
+Actu:
+  pattern:  /actualite
+  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Actu:index }
