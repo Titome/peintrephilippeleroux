@@ -25,4 +25,4 @@ Actu:
 
 Contact:
   pattern:  /contact
-  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Contact: index }
+  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Contact:index }
