@@ -1,0 +1,16 @@
+{% extends "TitomePeintrePhilippeLerouxBundle::layout.html.twig" %}
+
+{% block title %}Contact - {{ parent() }}{% endblock %}
+
+{% block corps %}
+	{{ parent() }}
+
+	<section class="margin2pl">
+		{% if app.session.hasFlash('notice') %}
+			<div class="alert alert-success">
+				<a href="#" class="close" data-dismiss="alert">x</a>
+				<h4 class="alert-heading">{{ app.session.flash('notice') }}</h4>
+			</div>
+		{% endif %}
+	</section>
+{% endblock %}

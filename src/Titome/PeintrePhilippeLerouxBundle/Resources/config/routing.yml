@@ -22,3 +22,7 @@ Expo:
 Actu:
   pattern:  /actualite
   defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Actu:index }
+
+Contact:
+  pattern:  /contact
+  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Contact: index }
