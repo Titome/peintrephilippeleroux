@@ -10,7 +10,7 @@ class ContactController extends Controller
 	{
 		$message = \Swift_Message::newInstance()
 			->setSubject('Hello Email')
-			->setFrom('timothee@timotheegirard.com')
+			->setFrom('contact@peintrephilippeleroux.com')
 			->setTo('girard.timothee@gmail.com')
 			->setBody('Test')
 		;
