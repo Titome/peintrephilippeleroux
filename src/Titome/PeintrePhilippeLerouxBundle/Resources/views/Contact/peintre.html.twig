@@ -1,0 +1,16 @@
+{% extends "TitomePeintrePhilippeLerouxBundle::layout.html.twig" %}
+
+{% block title %}Contacter le peintre Philippe Leroux{{ parent() }}{% endblock %}
+
+{% block corps %}
+	<div class="container">
+		<form action="#" method="post" {{ form_enctype(form) }} class="well">
+			<h1>Contacter le peintre Philippe Leroux</h1>
+
+			{{ form_widget(form) }}
+
+			<input type="submit" value="Envoyer le message" class="btn" />
+			{# TODO : Faire un bouton annulé #}
+		</form>
+	</div>
+{% endblock %}

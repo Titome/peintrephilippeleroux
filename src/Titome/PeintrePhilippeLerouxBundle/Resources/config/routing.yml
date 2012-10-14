@@ -23,6 +23,15 @@ Actu:
   pattern:  /actualite
   defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Actu:index }
 
+# Contact
 Contact:
   pattern:  /contact
   defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Contact:index }
+
+ContactPeintre:
+  pattern:  /contact/peintre
+  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Contact:peintre }
+
+ContactGestionnaire:
+  pattern:  /contact/gestionnaire
+  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Contact:gestionnaire }
