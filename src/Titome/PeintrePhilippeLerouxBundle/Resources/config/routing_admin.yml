@@ -59,3 +59,8 @@ ModifExpo:
 ModifActu:
   pattern:  /actualite/modification
   defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Actu:ajout }
+
+# Livre
+AjoutLivre:
+  pattern:  /livre/ajout
+  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Livre:ajout }
