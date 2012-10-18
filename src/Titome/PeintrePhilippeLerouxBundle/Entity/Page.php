@@ -41,6 +41,14 @@ class Page
      */
     private $file;
 
+    /*
+     * @var Livre $livre
+     *
+     * @ORM\ManyToOne(targetEntity="Titome\PeintrePhilippeLerouxBundle\Entity\Livre")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $livre;
+
 
     /**
      * Get id
