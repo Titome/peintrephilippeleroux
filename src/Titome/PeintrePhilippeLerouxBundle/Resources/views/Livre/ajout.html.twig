@@ -1,0 +1,16 @@
+{% extends "TitomePeintrePhilippeLerouxBundle::layoutAdmin.html.twig" %}
+
+{% block title %}Ajouter un livre{{ parent() }}{% endblock %}
+
+{% block corps %}
+	<div class="container">
+		<h1>Ajouter un livre</h1>
+
+		<form action="#" method="post" {{ form_enctype(form) }} class="well" novalidate="novalidate">
+            {{ form_widget(form) }}
+
+            <input type="submit" value="Ajouter le livre" class="btn"/>
+            {# TODO : Faire un bouton annulé #}
+        </form>
+	</div>
+{% endblock %}

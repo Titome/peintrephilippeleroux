@@ -1,0 +1,27 @@
+{% extends "TitomePeintrePhilippeLerouxBundle::layout.html.twig" %}
+
+{% block title %}Lire - {{ parent() }}{% endblock %}
+
+{% block corps %}
+	{{ parent() }}
+
+	<section class="center">
+		<div id="flipbook">
+			{% for page in pages %}
+				<div><img src="{{ asset(('image/'~page.nom) | apply_filter('img')) }}" /></div>
+			{% endfor %}
+		</div>
+	</section>
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+
+	<script type="text/javascript">
+		$("#flipbook").turn({
+			width: 800,
+			height: 800,
+			autoCenter: true
+		});
+	</script>
+{% endblock %}

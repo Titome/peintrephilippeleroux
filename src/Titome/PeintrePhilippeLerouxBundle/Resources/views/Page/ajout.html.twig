@@ -1,0 +1,21 @@
+{% extends "TitomePeintrePhilippeLerouxBundle::layoutAdmin.html.twig" %}
+
+{% block title %}Ajout une page{{ parent() }}{% endblock %}
+
+{% block corps %}
+	<div class="container">
+		{% if app.session.hasFlash('notice') %}
+			<div class="alert alert-success">
+				<a class="close" data-dismiss="alert" href="#">x</a>
+				<h4 class="alert-heading">{{ app.session.flash('notice') | raw }}</h4>
+			</div>
+		{% endif %}
+        <h1>Ajouter une page</h1>
+
+        <form action="#" method="post" {{ form_enctype(form) }} class="well">
+            {{ form_widget(form) }}
+
+            <input type="submit" value="Envoyer l'image" class="btn"/>
+        </form>
+    </div>
+{% endblock %}

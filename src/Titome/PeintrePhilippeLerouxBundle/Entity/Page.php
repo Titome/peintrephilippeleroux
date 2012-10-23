@@ -4,6 +4,7 @@ namespace Titome\PeintrePhilippeLerouxBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Titome\PeintrePhilippeLerouxBundle\Entity\Livre;
 
 /**
  * Titome\PeintrePhilippeLerouxBundle\Entity\Page
@@ -49,6 +50,11 @@ class Page
      */
     private $livre;
 
+
+    public function __construct($livre)
+    {
+        $this->setLivre($livre);
+    }
 
     /**
      * Get id
@@ -127,5 +133,28 @@ class Page
     public function getFile()
     {
         return $this->file;
+    }
+
+    /**
+     * Set livre
+     *
+     * @param Livre $livre
+     * @return Page
+     */
+    public function setLivre(Livre $livre)
+    {
+        $this->livre = $livre;
+    
+        return $this;
+    }
+
+    /**
+     * Get livre
+     *
+     * @return Livre 
+     */
+    public function getLivre()
+    {
+        return $this->livre;
     }
 }

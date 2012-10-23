@@ -35,3 +35,14 @@ ContactPeintre:
 ContactGestionnaire:
   pattern:  /contact/gestionnaire
   defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Contact:gestionnaire }
+
+# Livre
+Livre:
+  pattern:  /livre
+  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Livre:index }
+
+LireLivre:
+  pattern:  /livre/lire/{id}
+  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Page:index }
+  requirements:
+    id:  \d+

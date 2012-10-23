@@ -33,7 +33,7 @@ ModifCarousel:
   pattern:  /carousel/modification/{id}
   defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Carousel:modif }
   requirements:
-    page: \d+
+    id: \d+
     
 DeleteViewCarousel:
   pattern:  /carousel/supprimer
@@ -43,7 +43,7 @@ DeleteCarousel:
   pattern:  /carousel/supprimer/{id}
   defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Carousel:delete }
   requirements:
-    page: \d+
+    id: \d+
     
 # Bio
 ModifBio:
@@ -64,3 +64,9 @@ ModifActu:
 AjoutLivre:
   pattern:  /livre/ajout
   defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Livre:ajout }
+
+AjoutPage:
+  pattern:  /page/ajout/{livreId}
+  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Page:ajout }
+  requirements:
+    livre:  \d+

@@ -1,0 +1,28 @@
+{% extends "TitomePeintrePhilippeLerouxBundle::layout.html.twig" %}
+
+{% block title %}Livre - {{ parent() }}{% endblock %}
+
+{% block corps %}
+    {{ parent() }}
+    
+    <section class="margin2pl">
+    	<div class="page-headerRed margin4pr">
+    		<h1 class="red">Livres</h1>
+    	</div>
+    	<ul class="thumbnails">
+    		{% for livre in livres %}
+    			<li>
+    				<div class="thumbnail">
+    					{# {{ path('LireLivre', { 'id' : livre.id }) }} #}
+    					<a href="{{ path('LireLivre', { 'id' : livre.id }) }}">
+    						<img src="{{ asset(('image/'~livre.couverture) | apply_filter('my_thumb')) }}" alt="{{ livre.nom }}" />
+    						<h5 class="red">{{ livre.nom }}</h5>
+    					</a>
+    				</div>
+    			</li>
+    		{% else %}
+    			<h5>Pas encore de livre !</h5>
+    		{% endfor %}
+    	</ul>
+    </section>
+{% endblock %}
