@@ -80,13 +80,16 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="{{ path('ModifExpo') }}">Modifier la page des actualités</a>
+                                <a href="{{ path('ModifActu') }}">Modifier la page des actualités</a>
                             </li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Livre <b class="caret"></b></a>
-                        <ul class="dropdown-menu"><li><a href="{{ path('AjoutLivre') }}">Ajouter</a></li></ul>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{ path('AjoutLivre') }}">Ajouter</a></li>
+                            <li><a href="{{ path('Livre') }}">Modifier</a></li>
+                        </ul>
                     </li>
                 </ul>
                 <ul class="nav pull-right">

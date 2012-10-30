@@ -13,11 +13,13 @@
     		{% for livre in livres %}
     			<li>
     				<div class="thumbnail">
-    					{# {{ path('LireLivre', { 'id' : livre.id }) }} #}
     					<a href="{{ path('LireLivre', { 'id' : livre.id }) }}">
     						<img src="{{ asset(('image/'~livre.couverture) | apply_filter('my_thumb')) }}" alt="{{ livre.nom }}" />
     						<h5 class="red">{{ livre.nom }}</h5>
     					</a>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <a class="btn btn-primary" href="{{ path('ModifLivre', { 'id' : livre.id }) }}">Modifier</a>
+                        {% endif %}
     				</div>
     			</li>
     		{% else %}

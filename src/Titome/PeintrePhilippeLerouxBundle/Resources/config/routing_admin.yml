@@ -65,8 +65,32 @@ AjoutLivre:
   pattern:  /livre/ajout
   defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Livre:ajout }
 
+ModifLivre:
+  pattern:  /livre/modification/{id}
+  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Livre:modif }
+  requirements:
+    id: \d+
+    
+ModifLivreTitre:
+  pattern:  /livre/modification/titre/{id}
+  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Livre:modifTitre }
+  requirements:
+    id: \d+
+    
+DeleteBook:
+  pattern:  /livre/supprimer/{id}
+  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Livre:delete }
+  requirements:
+    id: \d+
+    
 AjoutPage:
   pattern:  /page/ajout/{livreId}
   defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Page:ajout }
   requirements:
-    livre:  \d+
+    livreId:  \d+
+    
+DeleteViewPage:
+  pattern:  /page/supprimer/{id}
+  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Page:deleteView }
+  requirements:
+    id: \d+

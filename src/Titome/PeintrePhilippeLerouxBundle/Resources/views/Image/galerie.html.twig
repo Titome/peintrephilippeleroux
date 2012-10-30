@@ -26,8 +26,8 @@
                             <p>{{ image.legende }}</p>
                         </a>
                         {% if is_granted('ROLE_ADMIN') %}
-                            <a class="btn" href="{{ path('ModifierImage', { 'id' : image.id }) }}">Modifier</a>
-                            <a class="btn" data-toggle="modal" href="#myModal{{ image.id }}">Supprimer</a>
+                            <a class="btn btn-primary" href="{{ path('ModifierImage', { 'id' : image.id }) }}">Modifier</a>
+                            <a class="btn btn-danger" data-toggle="modal" href="#myModal{{ image.id }}">Supprimer</a>
                         {% endif %}
                     </div>
                 </li>
