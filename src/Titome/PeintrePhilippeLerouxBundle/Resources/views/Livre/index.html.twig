@@ -6,25 +6,32 @@
     {{ parent() }}
     
     <section class="margin2pl">
+        {% if app.session.hasFlash('notice') %}
+            <div class="alert alert-success">
+                <a class="close" data-dismiss="alert" href="#">x</a>
+                <h4 class="alert-heading">{{ app.session.flash('notice') }}</h4>
+            </div>
+        {% endif %}
     	<div class="page-headerRed margin4pr">
-    		<h1 class="red">Livres</h1>
+            <h1 class="red">Livres</h1>
     	</div>
     	<ul class="thumbnails">
-    		{% for livre in livres %}
-    			<li>
-    				<div class="thumbnail">
-    					<a href="{{ path('LireLivre', { 'id' : livre.id }) }}">
-    						<img src="{{ asset(('image/'~livre.couverture) | apply_filter('my_thumb')) }}" alt="{{ livre.nom }}" />
-    						<h5 class="red">{{ livre.nom }}</h5>
-    					</a>
+            {% for livre in livres %}
+                <li>
+                    <div class="thumbnail">
+                        <a href="{{ path('LireLivre', { 'id' : livre.id }) }}">
+                            <img src="{{ asset(('image/'~livre.couverture) | apply_filter('my_thumb')) }}" 
+                                 alt="{{ livre.nom }}" />
+                            <h5 class="red">{{ livre.nom }}</h5>
+    			</a>
                         {% if is_granted('ROLE_ADMIN') %}
                             <a class="btn btn-primary" href="{{ path('ModifLivre', { 'id' : livre.id }) }}">Modifier</a>
                         {% endif %}
-    				</div>
-    			</li>
-    		{% else %}
-    			<h5>Pas encore de livre !</h5>
-    		{% endfor %}
+                    </div>
+    		</li>
+            {% else %}
+    		<h5>Pas encore de livre !</h5>
+            {% endfor %}
     	</ul>
     </section>
 {% endblock %}

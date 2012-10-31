@@ -70,9 +70,7 @@ class ImageController extends Controller
         unlink(__DIR__.'/../../../../web/media/cache/my_thumb/image/'.$image->getNom());
         // Fichier généré que si on clique sur la miniature
         if (file_exists(__DIR__.'/../../../../web/media/cache/img/image/'.$image->getNom()))
-        {
             unlink(__DIR__.'/../../../../web/media/cache/img/image/'.$image->getNom());
-        }
         
         $em->remove($image);
         $em->flush();

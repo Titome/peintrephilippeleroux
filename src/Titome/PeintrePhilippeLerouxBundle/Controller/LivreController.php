@@ -25,17 +25,17 @@ class LivreController extends Controller
 	 */
 	public function ajoutAction()
 	{
-		$livre = new Livre;
-		$form = $this->createForm(new AjoutType(), $livre);
+            $livre = new Livre;
+            $form = $this->createForm(new AjoutType(), $livre);
 
-		$formHandler = new AjoutHandler($form, $this->getRequest(), $this->getDoctrine()->getEntityManager());
+            $formHandler = new AjoutHandler($form, $this->getRequest(), $this->getDoctrine()->getEntityManager());
 
-		$livreId = $formHandler->process();
+            $livreId = $formHandler->process();
 
-		if ($livreId)
-            return $this->redirect($this->generateUrl('AjoutPage', array('livreId' => $livreId)));
+            if ($livreId)
+                return $this->redirect($this->generateUrl('AjoutPage', array('livreId' => $livreId)));
         
-        return $this->render('TitomePeintrePhilippeLerouxBundle:Livre:ajout.html.twig', array('form' => $form->createView()));
+            return $this->render('TitomePeintrePhilippeLerouxBundle:Livre:ajout.html.twig', array('form' => $form->createView()));
 	}
 
 	/**
@@ -69,5 +69,37 @@ class LivreController extends Controller
             
             return $this->render('TitomePeintrePhilippeLerouxBundle:Livre:modifTitre.html.twig',
                     array('form' => $form->createView()));
+        }
+        
+        /**
+         * @Secure(roles="ROLE_ADMIN")
+         */
+        public function deleteAction($id)
+        {
+            $em = $this->getDoctrine()->getEntityManager();
+            $livre = $em->getRepository('TitomePeintrePhilippeLerouxBundle:Livre')->find($id);
+            $pages = $em->getRepository('TitomePeintrePhilippeLerouxBundle:Page')->findBy(array('livre' => $livre));
+            
+            foreach ($pages as $page)
+            {
+                unlink(__DIR__.'/../../../../web/image/'.$page->getNom());
+                
+                if (file_exists(__DIR__.'/../../../../web/media/cache/img/image/'.$page->getNom()))
+                    unlink(__DIR__.'/../../../../web/media/cache/img/image/'.$page->getNom());
+                
+                $em->remove($page);
+            }
+            
+            unlink(__DIR__.'/../../../../web/image/'.$livre->getCouverture());
+            
+            if (file_exists(__DIR__.'/../../../../web/media/cache/img/my_thumb/'.$livre->getCouverture()))
+                unlink(__DIR__.'/../../../../web/media/cache/img/my_thumb/'.$livre->getCouverture());
+            
+            $em->remove($livre);
+            $em->flush();
+            
+            $this->get('session')->setFlash('notice', 'Suppression effectuée !');
+            
+            return $this->redirect($this->generateUrl('Livre'));
         }
 }

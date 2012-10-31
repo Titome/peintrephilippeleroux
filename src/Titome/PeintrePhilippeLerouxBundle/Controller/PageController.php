@@ -13,6 +13,7 @@ class PageController extends Controller
 {
 	public function indexAction($id)
 	{
+            // TODO : À retravailler avec un $em
 		$repositoryLivre = $this->getDoctrine()->getEntityManager()->getRepository('TitomePeintrePhilippeLerouxBundle:Livre');
 		$livre = $repositoryLivre->find($id);
 
