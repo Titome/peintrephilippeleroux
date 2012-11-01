@@ -9,7 +9,7 @@
             <link rel="shortcut icon" href="{{ asset_url }}" />
         {% endimage %}
     </head>
-    <body class="blackB">
+    <body {% block body_class %}{% endblock %}>
         {% block body %}
             {% block nav %}{% endblock %}
             {% block corps %}{% endblock %}
