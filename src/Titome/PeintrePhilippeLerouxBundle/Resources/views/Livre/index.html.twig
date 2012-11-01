@@ -1,6 +1,6 @@
 {% extends "TitomePeintrePhilippeLerouxBundle::layout.html.twig" %}
 
-{% block title %}Livre - {{ parent() }}{% endblock %}
+{% block title %}Livres - {{ parent() }}{% endblock %}
 
 {% block corps %}
     {{ parent() }}
@@ -26,9 +26,31 @@
     			</a>
                         {% if is_granted('ROLE_ADMIN') %}
                             <a class="btn btn-primary" href="{{ path('ModifLivre', { 'id' : livre.id }) }}">Modifier</a>
+                            <a class="btn btn-danger" data-toggle="modal" href="#myModal{{ livre.id }}">Supprimer</a>
                         {% endif %}
                     </div>
     		</li>
+                
+                {% if is_granted('ROLE_ADMIN') %}
+                    <div class="modal hide" id="myModal{{ livre.id }}">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">x</button>
+                            <h3>Voulez-vous vraiment supprimez ...?</h3>
+                        </div>
+                        <div class="modal-body-livre">
+                            <h4>{{ livre.nom }}</h4>
+                            <img src="{{ asset(('image/'~livre.couverture) | apply_filter('my_thumb')) }}"
+                                 alt="{{ livre.nom }}" />
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#" class="btn" data-dismiss="modal">Annuler</a>
+                            <a href="{{ path('DeleteBook', { 'id' : livre.id }) }}" class="btn btn-primary">
+                                Confirmer la suppression
+                            </a>
+                        </div>
+                    </div>
+                {% endif %}
+                
             {% else %}
     		<h5>Pas encore de livre !</h5>
             {% endfor %}

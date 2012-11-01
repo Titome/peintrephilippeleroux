@@ -240,6 +240,11 @@
     display: block;
   }
 }
+.modal-body-livre {
+  overflow-y: auto;
+  max-height: 420px;
+  padding: 15px;
+}
 .thumbnails > li {
   height: 460px;
 }
