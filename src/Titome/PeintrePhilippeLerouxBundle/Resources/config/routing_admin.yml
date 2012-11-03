@@ -90,7 +90,14 @@ AjoutPage:
     livreId:  \d+
     
 DeleteViewPage:
-  pattern:  /page/supprimer/{id}
+  pattern:  /page/supprimer/{livreId}
   defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Page:deleteView }
   requirements:
+    livreId:  \d+
+    
+DeletePage:
+  pattern:  /page/supprimer/{livreId}/{id}
+  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Page:delete }
+  requirements:
+    livreId:  \d+
     id: \d+

@@ -76,6 +76,9 @@ class CarouselController extends Controller
     }
     
     // TODO : Fusionner avec ordreAction(), template
+    /**
+     * @Secure(roles="ROLE_ADMIN")
+     */
     public function deleteViewAction()
     {
         $repository = $this->getDoctrine()->getEntityManager()->getRepository('TitomePeintrePhilippeLerouxBundle:Carousel');

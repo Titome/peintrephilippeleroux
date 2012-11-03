@@ -9,7 +9,7 @@
                 <a class="close" data-dismiss="alert" href="#">x</a>
                 <h4 class="alert-heading">{{ app.session.flash('notice') }}</h4>
             </div>
-	   {% endif %}
+	{% endif %}
             
         <h1>Supprimer une image dans le carrousel</h1>
 
@@ -34,11 +34,9 @@
                     </div>
                     <div class="modal-footer">
                         <a href="#" class="btn" data-dismiss="modal">Annuler</a>
-                                    <a href="{{ path('DeleteCarousel', { 'id' : image.id }) }}" class="btn btn-primary">
-                                        Confirmer la suppression
-                                    </a>
-                            </div>
+                        <a href="{{ path('DeleteCarousel', { 'id' : image.id }) }}" class="btn btn-primary">Confirmer la suppression</a>
                     </div>
+                </div>
             {% else %}
                 <h5>Pas encore d'image !</h5>
             {% endfor %}

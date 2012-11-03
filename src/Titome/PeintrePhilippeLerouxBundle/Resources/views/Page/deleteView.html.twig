@@ -1,0 +1,51 @@
+{% extends "TitomePeintrePhilippeLerouxBundle::layoutAdmin.html.twig" %}
+
+{% block title %}Supprimer une page dans le livre {{ livre.nom }}{{ parent() }}{% endblock %}
+
+{% block corps %}
+    <div class="container">
+        {% if app.session.hasFlash('notice') %}
+            <div class="alert alert-success">
+                <a class="close" data-dismiss="alert" href="#">x</a>
+                <h4 class="alert-heading">{{ app.session.flash('notice') }}</h4>
+            </div>
+        {% endif %}
+            
+        <h1>Supprimer une page dans le livre {{ livre.nom }}</h1>
+        
+        <ul class="thumbnails">
+            {% for page in pages %}
+                <li>
+                    <div class="thumbnail">
+                        <a data-toggle="modal" href="#myModal{{ page.id }}">
+                            <img src="{{ asset(('image/'~page.nom) | apply_filter('my_thumb')) }}" 
+                                 alt="{{ page.numero }}" />
+                            <p>
+                                Page n°{{ page.numero }}<br />
+                                Supprimer
+                            </p>
+                        </a>
+                    </div>
+                </li>
+                
+                <div class="modal hide" id="myModal{{ page.id }}">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">x</button>
+                        <h3>Voulez-vous vraiment supprimez ...?</h3>
+                    </div>
+                    <div class="modal-body">
+                        <img src="{{ asset(('image/'~page.nom) | apply_filter('my_thumb')) }}" alt="{{ page.numero }}" />
+                    </div>
+                    <div class="modal-footer">
+                        <a href="#" class="btn" data-dismiss="modal">Annuller</a>
+                        <a href="{{ path('DeletePage', { 'livreId' : livre.id, 'id' : page.id }) }}" class="btn btn-primary">
+                            Confirmer la suppression
+                        </a>
+                    </div>
+                </div>
+            {% else %}
+                <h5>Pas encore de page !</h5>
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
