@@ -69,6 +69,9 @@ avalanche_imagine:
         img:
           type:    thumbnail
           options: { size: [800, 800], mode: inset }
+        livre:
+          type:    thumbnail
+          options: { size: [421, 550], mode: inset }
 
 fos_user:
     db_driver:     orm                        # Le type de BDD à utiliser, nous utilisons l'ORM Doctrine depuis le début

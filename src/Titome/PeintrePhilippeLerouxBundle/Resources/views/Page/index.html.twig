@@ -8,7 +8,7 @@
 	<section class="center">
 		<div id="flipbook">
 			{% for page in pages %}
-				<div><img src="{{ asset(('image/'~page.nom) | apply_filter('img')) }}" /></div>
+				<div><img src="{{ asset(('image/'~page.nom) | apply_filter('livre')) }}" /></div>
 			{% endfor %}
 		</div>
 	</section>
@@ -19,8 +19,8 @@
 
 	<script type="text/javascript">
 		$("#flipbook").turn({
-			width: 800,
-			height: 800,
+			width: 842,
+			height: 550,
 			autoCenter: true
 		});
 	</script>
