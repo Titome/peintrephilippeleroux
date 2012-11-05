@@ -38,7 +38,8 @@ class PageController extends Controller
 	if ($formHandler->process())
 	{
             $this->get('session')->setFlash('notice', 
-                    'Page ajoutée ! Pour arrêter de rajouter des pages au livre cliquer <a href="#">ici</a>');
+                    'Page ajoutée ! Pour arrêter de rajouter des pages au livre cliquer 
+                     <a href="'.$this->generateUrl('LireLivre', array('id' => $livreId)).'">ici</a>');
             
             return $this->redirect($this->generateUrl('AjoutPage', array('livreId' => $livreId)));
 	}

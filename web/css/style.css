@@ -1,3 +1,279 @@
+.page-headerRed {
+  padding-bottom: 17px;
+  margin: 18px 0;
+  border-bottom: 1px solid red;
+}
+.page-headerRed h1 {
+  line-height: 1;
+}
+.red {
+  color: red;
+}
+.blackB {
+  background-color: black;
+}
+.margin2pl {
+  margin-left: 2%;
+}
+.margin4pr {
+  margin-right: 4%;
+}
+.center {
+  width: 800px;
+  margin: auto;
+}
+.navbar-red .nav > li > span {
+  display: block;
+}
+.navbar-red {
+  *position: relative;
+  *z-index: 2;
+  overflow: visible;
+  margin-bottom: 18px;
+}
+.navbar-red .container {
+  width: auto;
+}
+.navbar-red {
+  color: #ff0000;
+}
+.navbar-red .brand:hover {
+  text-decoration: none;
+}
+.navbar-red .brand {
+  float: left;
+  display: block;
+  padding: 8px 20px 12px;
+  margin-left: -20px;
+  font-size: 20px;
+  font-weight: 200;
+  line-height: 1;
+  color: #ff0000;
+}
+.navbar-red .navbar-text {
+  margin-bottom: 0;
+  line-height: 40px;
+}
+.navbar-red .navbar-link {
+  color: #999999;
+}
+.navbar-red .navbar-link:hover {
+  color: #ffffff;
+}
+.navbar-red .btn, .navbar-red .btn-group {
+  margin-top: 5px;
+}
+.navbar-red .btn-group .btn {
+  margin: 0;
+}
+.navbar-red .nav {
+  position: relative;
+  left: 0;
+  display: block;
+  float: left;
+  margin: 0 10px 0 0;
+}
+.navbar-red .nav.pull-right {
+  float: right;
+}
+.navbar-red .nav > li {
+  display: block;
+  float: left;
+}
+.navbar-red .nav > li > span {
+  display: block;
+  padding: 9px 10px 11px;
+}
+.navbar-red .nav > li > a {
+  float: none;
+  padding: 9px 10px 11px;
+  line-height: 19px;
+  color: #ff0000;
+  text-decoration: none;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.navbar-red .btn {
+  display: inline-block;
+  padding: 4px 10px 4px;
+  margin: 5px 5px 6px;
+  line-height: 18px;
+}
+.navbar-red .btn-group {
+  margin: 0;
+  padding: 5px 5px 6px;
+}
+.navbar-red .nav > li > a:hover {
+  background-color: transparent;
+  color: #ffffff;
+  text-decoration: none;
+}
+.navbar-red .nav .active > a, .navbar-red .nav .active > a:hover {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #222222;
+}
+.navbar-red .divider-vertical {
+  height: 40px;
+  width: 1px;
+  margin: 0 9px;
+  overflow: hidden;
+  background-color: #222222;
+  border-right: 1px solid #333333;
+}
+.navbar-red .nav.pull-right {
+  margin-left: 10px;
+  margin-right: 0;
+}
+.navbar-red .btn-navbar {
+  display: none;
+  float: right;
+  padding: 7px 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: #2c2c2c;
+  background-image: -moz-linear-gradient(top, #333333, #222222);
+  background-image: -ms-linear-gradient(top, #333333, #222222);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#333333), to(#222222));
+  background-image: -webkit-linear-gradient(top, #333333, #222222);
+  background-image: -o-linear-gradient(top, #333333, #222222);
+  background-image: linear-gradient(top, #333333, #222222);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#333333', endColorstr='#222222', GradientType=0);
+  border-color: #222222 #222222 #000000;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  *background-color: #222222;
+  /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.075);
+  -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.075);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.075);
+}
+.navbar-red .btn-navbar:hover,
+.navbar-red .btn-navbar:active,
+.navbar-red .btn-navbar.active,
+.navbar-red .btn-navbar.disabled,
+.navbar-red .btn-navbar[disabled] {
+  background-color: #222222;
+  *background-color: #151515;
+}
+.navbar-red .btn-navbar:active, .navbar-red .btn-navbar.active {
+  background-color: #080808 \9;
+}
+.navbar-red .btn-navbar .icon-bar {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background-color: #f5f5f5;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+}
+.btn-navbar .icon-bar + .icon-bar {
+  margin-top: 3px;
+}
+.navbar-red .dropdown-menu:before {
+  content: '';
+  display: inline-block;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #ccc;
+  border-bottom-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: -7px;
+  left: 9px;
+}
+.navbar-red .dropdown-menu:after {
+  content: '';
+  display: inline-block;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid #ffffff;
+  position: absolute;
+  top: -6px;
+  left: 10px;
+}
+.navbar-red .nav li.dropdown .dropdown-toggle .caret, .navbar-red .nav li.dropdown.open .caret {
+  border-top-color: #ffffff;
+  border-bottom-color: #ffffff;
+}
+.navbar-red .nav li.dropdown.active .caret {
+  opacity: 1;
+  filter: alpha(opacity=100);
+}
+.navbar-red .nav li.dropdown.open > .dropdown-toggle, .navbar-red .nav li.dropdown.active > .dropdown-toggle, .navbar-red .nav li.dropdown.open.active > .dropdown-toggle {
+  background-color: transparent;
+}
+.navbar-red .nav li.dropdown.active > .dropdown-toggle:hover {
+  color: #ffffff;
+}
+.navbar-red .pull-right .dropdown-menu, .navbar-red .dropdown-menu.pull-right {
+  left: auto;
+  right: 0;
+}
+.navbar-red .pull-right .dropdown-menu:before, .navbar-red .dropdown-menu.pull-right:before {
+  left: auto;
+  right: 12px;
+}
+.navbar-red .pull-right .dropdown-menu:after, .navbar-red .dropdown-menu.pull-right:after {
+  left: auto;
+  right: 13px;
+}
+@media (max-width: 979px) {
+  .navbar .container {
+    width: auto;
+    padding: 0;
+  }
+  .navbar .brand {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0 0 0 -5px;
+  }
+  .navbar .nav-collapse .nav.pull-right {
+    float: none;
+    margin-left: 0;
+  }
+  .navbar .btn-navbar {
+    display: block;
+  }
+}
+.modal-body-livre {
+  overflow-y: auto;
+  max-height: 420px;
+  padding: 15px;
+}
+.thumbnails > li {
+  height: 460px;
+}
+
+@media (max-width: 480px) {
+  .page-headerRed h1 small {
+    display: block;
+    line-height: 18px;
+  }
+}
+@media (max-width: 979px) {
+  .navbar .container {
+    width: auto;
+    padding: 0;
+  }
+  .navbar .brand {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0 0 0 -5px;
+  }
+  .navbar .nav-collapse .nav.pull-right {
+    float: none;
+    margin-left: 0;
+  }
+  .navbar .btn-navbar {
+    display: block;
+  }
+}
+
 /*!
  * Bootstrap Responsive v2.0.3
  *
