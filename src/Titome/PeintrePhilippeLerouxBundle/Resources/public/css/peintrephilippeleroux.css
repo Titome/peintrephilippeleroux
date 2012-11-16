@@ -12,6 +12,12 @@
 .blackB {
   background-color: black;
 }
+.fontSize20px {
+  font-size: 20px;
+}
+.underline {
+  text-decoration: underline;
+}
 .margin2pl {
   margin-left: 2%;
 }
