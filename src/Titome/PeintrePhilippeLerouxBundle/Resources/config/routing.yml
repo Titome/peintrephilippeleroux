@@ -15,9 +15,10 @@ Bio:
   pattern:  /biographie
   defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Bio:index }
   
-Expo:
-  pattern:  /exposition
-  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Expo:index }
+# EXPO
+#Expo:
+#  pattern:  /exposition
+#  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Expo:index }
 
 Actu:
   pattern:  /actualite
