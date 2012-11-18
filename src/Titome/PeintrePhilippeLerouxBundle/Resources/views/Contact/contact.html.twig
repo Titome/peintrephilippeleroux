@@ -3,30 +3,36 @@
 {% block title %}Contact - {{ parent() }}{% endblock %}
 
 {% block corps %}
-	{{ parent() }}
+    {{ parent() }}
 
-	<section class="margin2pl">
-		{% if app.session.hasFlash('notice') %}
-			<div class="alert alert-success">
-				<a href="#" class="close" data-dismiss="alert">x</a>
-				<h4 class="alert-heading">{{ app.session.flash('notice') }}</h4>
-			</div>
-		{% endif %}
-		<div class="hero-unit">
-			<h1>Pour me contacter</h1><br />
-			<p>Si vous voulez contacter Philippe Leroux</p>
-			<p><a href="{{ path('ContactPeintre') }}" class="btn btn-inverse btn-large">Cliquez ici</a></p>
-		</div>	
-		<div class="hero-unit">
-			<h1>Pour contacter le gestionnaire du site</h1><br />
-			<p>Si vous rencontrez des problèmes de fonctionnement ou si vous avez des suggestions ou pour tout autre chose, vous pouvez contacter le gestionnaire du site</p>
-			<p><a href="{{ path('ContactGestionnaire') }}" class="btn btn-inverse btn-large">Cliquez ici</a></p>
-		</div>
-		{# TODO : À retravailler #}
-		<div class="alert alert-info">
-			<p class="lead">
-				Ce site est optimisé pour le navigateur Mozilla Firefox qui respecte les derniers standards du web, vous pouvez le télécharger à cette adresse <a href="http://www.mozilla-europe.org/fr/firefox/">http://www.mozilla-europe.org/fr/firefox/</a>
-			</p>
-		</div>
-	</section>
+    <section class="margin2pl">
+        {% if app.session.hasFlash('notice') %}
+            <div class="alert alert-success">
+		<a href="#" class="close" data-dismiss="alert">x</a>
+		<h4 class="alert-heading">{{ app.session.flash('notice') }}</h4>
+            </div>
+	{% endif %}
+        <div class="hero-unitContact">
+            <h1>Pour me contacter</h1><br />
+            <p>Si vous voulez contacter Philippe Leroux</p>
+            <p><a href="{{ path('ContactPeintre') }}" class="btn btn-danger">Cliquez ici</a></p>
+        </div>	
+        <div class="hero-unitContact">
+            <h1>Pour contacter le gestionnaire du site</h1><br />
+		<p>
+                    Si vous rencontrez des problèmes de fonctionnement ou si vous avez des suggestions ou pour tout autre chose, 
+                    vous pouvez contacter le gestionnaire du site
+                </p>
+		<p><a href="{{ path('ContactGestionnaire') }}" class="btn btn-danger">Cliquez ici</a></p>
+            </div>
+            <div class="alertContact alert-info">
+                <p class="fontSize18px">
+                    Ce site est optimisé pour le navigateur Mozilla Firefox qui respecte les derniers standards du web, vous 
+                    pouvez le télécharger à cette adresse 
+                    <a href="http://www.mozilla-europe.org/fr/firefox/" class="linkUnderline">
+                        http://www.mozilla-europe.org/fr/firefox/
+                    </a>
+		</p>
+            </div>
+    </section>
 {% endblock %}
