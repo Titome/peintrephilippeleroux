@@ -47,6 +47,9 @@ class AjoutHandler
         $image->setNom($nom);
         $image->getFile()->move(__DIR__.'/../../../../../../web/image', $nom);
         
+        $query = $this->em->createQuery('SELECT COUNT(i.id) FROM Titome\PeintrePhilippeLerouxBundle\Entity\Image i');
+        $image->setOrdre($query->getSingleScalarResult() + 1);
+        
         $this->em->persist($image);
         $this->em->flush();
     }

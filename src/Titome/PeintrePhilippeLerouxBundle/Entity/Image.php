@@ -51,6 +51,14 @@ class Image
     private $creat;
     
     /**
+     * @var integer $ordre
+     * 
+     * @ORM\Column(name="ordre", type="integer")
+     */
+    private $ordre;
+
+
+    /**
      * @Assert\Image 
      */
     private $file;
@@ -159,5 +167,28 @@ class Image
     public function setFile($file)
     {
         $this->file = $file;
+    }
+
+    /**
+     * Set ordre
+     *
+     * @param integer $ordre
+     * @return Image
+     */
+    public function setOrdre($ordre)
+    {
+        $this->ordre = $ordre;
+    
+        return $this;
+    }
+
+    /**
+     * Get ordre
+     *
+     * @return integer 
+     */
+    public function getOrdre()
+    {
+        return $this->ordre;
     }
 }
