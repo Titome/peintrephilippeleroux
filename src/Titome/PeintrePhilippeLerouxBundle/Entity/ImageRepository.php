@@ -12,4 +12,12 @@ use Doctrine\ORM\EntityRepository;
  */
 class ImageRepository extends EntityRepository
 {
+    public function listeGalerie()
+    {
+        $qb = $this->createQueryBuilder('i');
+        
+        $qb->orderBy('i.ordre', 'DESC');
+        
+        return $qb->getQuery()->getResult();
+    }
 }

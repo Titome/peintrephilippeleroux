@@ -17,7 +17,7 @@ class ImageController extends Controller
     {
         $repository = $this->getDoctrine()->getEntityManager()->getRepository('TitomePeintrePhilippeLerouxBundle:Image');
         
-        $images = $repository->findAll();
+        $images = $repository->listeGalerie();
         
         return $this->render('TitomePeintrePhilippeLerouxBundle:Image:galerie.html.twig', array('images' => $images));
     }
