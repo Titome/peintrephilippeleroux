@@ -17,7 +17,7 @@
             {% for image in images %}
                 <li>
                     <div class="thumbnail">
-                        <a href="{{ path('ModifCarousel', { 'id' : image.ordre}) }}">
+                        <a href="{{ path('ModifCarousel', { 'id' : image.id }) }}">
                             <img src="{{ asset(('image/'~image.image) | apply_filter('my_thumb')) }}" alt="{{ image.image }}" />
                             <h5>N°{{ image.ordre }}</h5>
                             <p>Modifier son ordre</p>

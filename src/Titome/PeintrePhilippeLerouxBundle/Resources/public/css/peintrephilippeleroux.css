@@ -296,7 +296,7 @@
   max-height: 420px;
   padding: 15px;
 }
-.thumbnails > li {
+.thumbnails > li.height {
   height: 460px;
 }
 .hero-unitContact {

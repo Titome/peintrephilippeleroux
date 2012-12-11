@@ -12,13 +12,23 @@ ModifierImage:
   pattern:  /image/modification/{id}
   defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Image:modif }
   requirements:
-    page: \d+
+    id: \d+
   
 DeletePicture:
   pattern:  /image/supprimer/{id}
   defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Image:delete }
   requirements:
-    page: \d+
+    id: \d+
+    
+OrdrePicture:
+  pattern:  /image/ordre
+  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Image:ordre }
+  
+OrdreModifPicture:
+  pattern:  /image/ordre/modification/{id}
+  defaults: { _controller: TitomePeintrePhilippeLerouxBundle:Image:ordreModif }
+  requirements:
+    id: \d+
 
 # Carousel
 AjoutCarousel:

@@ -7,8 +7,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Titome\PeintrePhilippeLerouxBundle\Entity\Image;
 use Titome\PeintrePhilippeLerouxBundle\Form\Handler\Image\AjoutHandler;
 use Titome\PeintrePhilippeLerouxBundle\Form\Handler\Image\ModifHandler;
+use Titome\PeintrePhilippeLerouxBundle\Form\Handler\Image\ModifOrdreHandler;
 use Titome\PeintrePhilippeLerouxBundle\Form\Type\Image\AjoutType;
 use Titome\PeintrePhilippeLerouxBundle\Form\Type\Image\ModifType;
+use Titome\PeintrePhilippeLerouxBundle\Form\Type\Image\ModifOrdreType;
 
 
 class ImageController extends Controller
@@ -17,7 +19,7 @@ class ImageController extends Controller
     {
         $repository = $this->getDoctrine()->getEntityManager()->getRepository('TitomePeintrePhilippeLerouxBundle:Image');
         
-        $images = $repository->listeGalerie();
+        $images = $repository->findBy(array(), array('ordre' => 'DESC')); //$repository->listeGalerie();
         
         return $this->render('TitomePeintrePhilippeLerouxBundle:Image:galerie.html.twig', array('images' => $images));
     }
@@ -77,5 +79,42 @@ class ImageController extends Controller
         
         $this->get('session')->setFlash('notice', 'Suppression effectuée !');
         return $this->redirect($this->generateUrl('Galerie'));
+    }
+    
+    /**
+     * @Secure(roles="ROLE_ADMIN")
+     */
+    public function ordreAction()
+    {
+        $repository = $this->getDoctrine()->getEntityManager()->getRepository('TitomePeintrePhilippeLerouxBundle:Image');
+        $images = $repository->findBy(array(), array('ordre' => 'DESC'));
+        // TODO : À supprimer. Pour fin de test pour la modification de l'ordre dans la galerie
+        //$images = $repository->findBy(array(), array('ordre' => 'asc'), 9 - 3, 3);
+        
+        return $this->render('TitomePeintrePhilippeLerouxBundle:Image:ordre.html.twig', array('images' => $images));
+    }
+    
+    /**
+     * @Secure(roles="ROLE_ADMIN")
+     */
+    public function ordreModifAction($id)
+    {
+    	$repository = $this->getDoctrine()->getEntityManager()->getRepository('TitomePeintrePhilippeLerouxBundle:Image');
+    	$image = $repository->find($id);
+        $images = $repository->findBy(array(), array('ordre' => 'DESC'));
+    	
+    	$form = $this->createForm(new ModifOrdreType, $image);
+        $formHandler = 
+            new ModifOrdreHandler($form, $this->getRequest(), $this->getDoctrine()->getEntityManager(), $image->getOrdre());
+        
+        if ($formHandler->process())
+        {
+            $this->get('session')->setFlash('notice', 'L\'ordre a été modifié avec succès !');
+            
+            return $this->redirect($this->generateUrl('OrdrePicture'));
+        }
+        
+        return $this->render('TitomePeintrePhilippeLerouxBundle:Image:modifOrdre.html.twig', 
+                array('form' => $form->createView(), 'image' => $image, 'images' => $images));
     }
 }

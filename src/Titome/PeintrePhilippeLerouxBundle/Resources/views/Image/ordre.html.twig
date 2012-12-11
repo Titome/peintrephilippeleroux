@@ -1,0 +1,25 @@
+{% extends "TitomePeintrePhilippeLerouxBundle::layoutAdmin.html.twig" %}
+
+{% block title %}Modifier l'ordre des images dans la galerie{{ parent() }}{% endblock %}
+
+{% block corps %}
+    <section class="margin2pl">
+        <h1>Modifier l'ordre des images dans la galerie</h1>
+		
+	<ul class="thumbnails">
+            {% for image in images %}
+                <li class="height">
+                    <div class="thumbnail">
+			<a href="{{ path('OrdreModifPicture', { 'id' : image.id }) }}">
+                            <img src="{{ asset(('image/'~image.nom) | apply_filter('my_thumb')) }}" alt="{{ image.nom }}" />
+                            <h5>N°{{ image.ordre }}</h5>
+                            <p>Modifier son ordre</p>
+			</a>
+                    </div>
+		</li>
+            {% else %}
+		<h5>Pas encore d'image !</h5>
+            {% endfor %}
+	</ul>
+    </section>
+{% endblock %}
