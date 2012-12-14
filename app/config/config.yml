@@ -91,9 +91,9 @@ trsteel_ckeditor:
 #    filebrowser_flash_upload_url: "/peintrephilippeleroux/web/bundles/titomepeintrephilippeleroux/kcfinder/upload.php?type=flash"
 
     # Liens pour la versions de prod
-    filebrowser_browse_url: "/web/bundles/titomepeintrephilippeleroux/kcfinder/browse.php?type=files"
-    filebrowser_upload_url: "/web/bundles/titomepeintrephilippeleroux/kcfinder/upload.php?type=files"
-    filebrowser_image_browse_url: "/web/bundles/titomepeintrephilippeleroux/kcfinder/browse.php?type=images"
-    filebrowser_image_upload_url: "/web/bundles/titomepeintrephilippeleroux/kcfinder/upload.php?type=images"
-    filebrowser_flash_browse_url: "/web/bundles/titomepeintrephilippeleroux/kcfinder/browse.php?type=flash"
-    filebrowser_flash_upload_url: "/web/bundles/titomepeintrephilippeleroux/kcfinder/upload.php?type=flash"
+    filebrowser_browse_url: "/bundles/titomepeintrephilippeleroux/kcfinder/browse.php?type=files"
+    filebrowser_upload_url: "/bundles/titomepeintrephilippeleroux/kcfinder/upload.php?type=files"
+    filebrowser_image_browse_url: "/bundles/titomepeintrephilippeleroux/kcfinder/browse.php?type=images"
+    filebrowser_image_upload_url: "/bundles/titomepeintrephilippeleroux/kcfinder/upload.php?type=images"
+    filebrowser_flash_browse_url: "/bundles/titomepeintrephilippeleroux/kcfinder/browse.php?type=flash"
+    filebrowser_flash_upload_url: "/bundles/titomepeintrephilippeleroux/kcfinder/upload.php?type=flash"
