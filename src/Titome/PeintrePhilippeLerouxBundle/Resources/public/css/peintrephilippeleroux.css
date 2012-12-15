@@ -38,6 +38,9 @@
   width: 842px;
   margin: auto;
 }
+.text-align-center {
+  text-align: center;
+}
 .linkUnderline {
   text-decoration: underline;
 }
