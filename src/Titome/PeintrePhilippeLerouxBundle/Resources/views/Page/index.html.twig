@@ -3,25 +3,29 @@
 {% block title %}Lire - {{ parent() }}{% endblock %}
 
 {% block corps %}
-	{{ parent() }}
+    {{ parent() }}
 
-	<section class="center">
-		<div id="flipbook">
-			{% for page in pages %}
-				<div><img src="{{ asset(('image/'~page.nom) | apply_filter('livre')) }}" /></div>
-			{% endfor %}
-		</div>
-	</section>
+    <section class="center-book">
+        <h2 class="red padding300pxl">
+            Cliquez sur la corne pour tourner les pages
+            <img src="{{ asset('bundles/titomepeintrephilippeleroux/img/fleche.png') }}" />
+        </h2>
+        <div id="flipbook">
+            {% for page in pages %}
+                <div><img src="{{ asset(('image/'~page.nom) | apply_filter('livre')) }}" /></div>
+            {% endfor %}
+        </div>
+    </section>
 {% endblock %}
 
 {% block javascripts %}
-	{{ parent() }}
+    {{ parent() }}
 
-	<script type="text/javascript">
-		$("#flipbook").turn({
-			width: 842,
-			height: 550,
-			autoCenter: true
-		});
-	</script>
+    <script type="text/javascript">
+        $("#flipbook").turn({
+            width: 842,
+            height: 550,
+            autoCenter: true
+	});
+    </script>
 {% endblock %}

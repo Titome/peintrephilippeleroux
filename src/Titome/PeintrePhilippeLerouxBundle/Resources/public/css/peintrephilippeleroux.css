@@ -27,8 +27,15 @@
 .margin4pr {
   margin-right: 4%;
 }
+.padding300pxl {
+  padding-left: 300px;
+}
 .center {
   width: 800px;
+  margin: auto;
+}
+.center-book {
+  width: 842px;
   margin: auto;
 }
 .linkUnderline {
