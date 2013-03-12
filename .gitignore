@@ -5,7 +5,10 @@
 /.buildpath
 /.project
 /.settings/*
+/src/Titome/PeintrePhilippeLerouxBundle/Form/Handler/Email/EmailHandler.php
 /vendor/*
 /web/bundles/*
 /web/image/*
 /web/media/*
+/web/app_dev.php
+/web/config.php
